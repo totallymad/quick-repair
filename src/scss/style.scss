@@ -1,6 +1,11 @@
 @import "./base/base.scss";
-@import "./base/utilities";
+@import "./base/utilities.scss";
+@import "./base/typography.scss";
 @import "./components/button.scss";
 @import "./components/header.scss";
 @import "./components/hero.scss";
-@import "./pages/about/about.scss"
+@import "./components/footer.scss";
+@import "./pages/about/about.scss";
+@import "./pages/about/help.scss";
+@import "./pages/about/services.scss";
+@import "./pages/about/reviews.scss";

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.min.css">
-    <script defer src="js/script.js"></script>
+    <script defer src="js/script.min.js"></script>
     <title>Quick Repair</title>
 </head>
 
@@ -15,19 +15,21 @@
     <header>
         <div class="header">
             <div class="container">
-                <div class="header__toggle">Toggle</div>
+                <div class="header__toggle"><button id="theme-toggle">Switch to Dark Mode</button></div>
                 <div class="header__social">
                     <div class="header__social_item">
-                        <img src="icons/geo-location.svg" alt="Иконка геолокации">
-                        <a href="#">Найди нас на карте</a>
+                        <img id="header-logo" src="icons/geo-location-light.svg" alt="Иконка геолокации">
+                        <a
+                            href="https://yandex.ru/maps/20121/gryazovets/house/ulitsa_lenina_53_66/YEkYdAJjTUcAQFtifXR2eH5nbQ==/?ll=40.253422%2C58.879273&z=20.08">Найди
+                            нас на карте</a>
                     </div>
                     <div class="header__social_item">
                         <img src="icons/phone.svg" alt="Иконка телефона">
-                        <a href="#">89210519686</a>
+                        <a href="tel:+79815061868">+7 (981) 506-18-68</a>
                     </div>
                     <div class="header__social_item">
                         <img src="icons/email.svg" alt="Иконка почты">
-                        <a href="#">quickrepairgr@gmail.com</a>
+                        <a href="mailto:quickrepairgr@gmail.com">quickrepairgr@gmail.com</a>
                     </div>
                 </div>
                 <button class="button">Заказать звонок</button>
@@ -71,9 +73,9 @@
         </section>
 
         <section class="about">
+            <h2 class="title">О<span class="text-extrabold"> компании</span></h2>
             <div class="container">
                 <div class="about__text">
-                    <h2 class="about__text_title">О компании</h2>
                     <h3 class="about__text_subtitle">Успешно производим услуги компьютерного ремонта на протяжение уже
                         10 лет!</h3>
                     <p class="about__text_paragraph">Наша компания предоставляет профессиональные услуги по ремонту
@@ -84,12 +86,176 @@
                     <button class="button button-big">Узнать больше</button>
                 </div>
                 <div class="about__images">
-                    <img src="img/about-photos/pc-cpu.png" alt="процессор компьютера">
-                    <img src="img/about-photos/pc-motherboard.png" alt="материнская плата компьюетра">
+                    <img class="about__images-1" src="img/about-photos/pc-cpu.png" alt="процессор компьютера">
+                    <img class="about__images-2" src="img/about-photos/pc-motherboard.png"
+                        alt="материнская плата компьюетра">
                 </div>
             </div>
         </section>
 
+        <section class="help">
+            <h2 class="title title-green">чем мы можем <span class="text-extrabold">помочь</span></h2>
+            <h3 class="subtitle">Вот как мы можем <span class="text-extrabold">помочь вам</span> </h3>
+            <div class="container">
+                <div class="help__wrapper">
+                    <div class="help__wrapper_item">
+                        <img src="icons/tools.svg" alt="иконка иструментов">
+                        <h4>Поддержка на сайте</h4>
+                        <p>Онлайн-консультации и помощь через чат или форму обратной связи, чтобы быстро решить вашу
+                            проблему.</p>
+                    </div>
+                    <div class="help__wrapper_item">
+                        <img src="icons/headset.svg" alt="иконка наушников">
+                        <h4>Удаленная поддержка</h4>
+                        <p>Настройка программного обеспечения и устранение сбоев без визита в сервисный центр.</p>
+                    </div>
+                    <div class="help__wrapper_item">
+                        <img src="icons/stopwatch.svg" alt="иконка таймера">
+                        <h4>Быстрый сервис</h4>
+                        <p>Оперативное выполнение ремонта и услуг с минимальным временем ожидания.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="services">
+            <h2 class="title title">наши <span class="text-extrabold">услуги</span></h2>
+            <h3 class="subtitle subtitle-black">Исследуйте наши <span class="text-extrabold">услуги</span> </h3>
+            <div class="container">
+                <div class="services__wrapper">
+                    <div class="services__card services__card-1">
+                        <div class="services__card_icon">
+                            <img src="icons/smartphone-linear.svg" alt="иконка телефона">
+                        </div>
+                        <h4 class="services__card_title">Ремонт смартфона</h4>
+                        <p class="services__card_descr">Профессиональный ремонт любых моделей смартфонов, включая замену
+                            экранов, аккумуляторов и устранение программных сбоев.</p>
+                        <a href="#" class="services__card_link">Читать больше</a>
+                    </div>
+                    <div class="services__card services__card-2">
+                        <div class="services__card_icon">
+                            <img src="icons/smartphone-linear.svg" alt="иконка телефона">
+                        </div>
+                        <h4 class="services__card_title">Восстановление данных</h4>
+                        <p class="services__card_descr">Быстрое восстановление утраченных данных с жестких дисков,
+                            флешек и других носителей информации.</p>
+                        <a href="#" class="services__card_link">Читать больше</a>
+                    </div>
+                    <div class="services__card">
+                        <div class="services__card_icon">
+                            <img src="icons/smartphone-linear.svg" alt="иконка телефона">
+                        </div>
+                        <h4 class="services__card_title">Ремонт компьютера</h4>
+                        <p class="services__card_descr">Диагностика и устранение любых неисправностей компьютеров,
+                            включая замену комплектующих и настройку программного обеспечения.</p>
+                        <a href="#" class="services__card_link">Читать больше</a>
+                    </div>
+                </div>
+                <div class="services__dots">
+                    <div class="services__dots_dot"></div>
+                    <div class="services__dots_dot services__dots_dot-active"></div>
+                    <div class="services__dots_dot"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="reviews">
+            <div class="container">
+                <h2 class="title title">Отзывы</h2>
+                <h3 class="subtitle subtitle-black">Что говорят <span class="text-extrabold">клиенты</span> </h3>
+                <div class="reviews__wrapper">
+                    <div class="reviews__card">
+                        <img src="img/review-users/пользователь-1.png" alt="пользователь с отзыва">
+                        <div class="reviews__card_text">
+                            <h5>Анна М., Грязовец</h5>
+                            <p>"Обратилась с разбитым экраном ноутбука, все сделали за день! Очень довольна качеством
+                                работы
+                                и вежливым обслуживанием. Спасибо за скорость и профессионализм!"</p>
+                        </div>
+                    </div>
+                    <div class="reviews__card">
+                        <img src="img/review-users/пользователь-2.png" alt="пользователь с отзыва">
+                        <div class="reviews__card_text">
+                            <h5>Иван К., Вологда</h5>
+                            <p>"Нужно было восстановить данные с жесткого диска, думал, что все потеряно. Ребята не
+                                только вернули всю информацию, но и дали рекомендации, как избежать подобных проблем в
+                                будущем!"</p>
+                        </div>
+                    </div>
+                    <div class="reviews__card">
+                        <img src="img/review-users/пользователь-3.png" alt="пользователь с отзыва">
+                        <div class="reviews__card_text">
+                            <h5>Екатерина Л., Вологда</h5>
+                            <p>"Заказывала удаленную настройку программ на ноутбуке. Все сделали быстро и понятно
+                                объяснили, что и как настроено. Отличный сервис, рекомендую!"</p>
+                        </div>
+                    </div>
+                    <div class="reviews__card">
+                        <img src="img/review-users/пользователь-4.png" alt="пользователь с отзыва">
+                        <div class="reviews__card_text">
+                            <h5>Сергей П., Грязовец</h5>
+                            <p>"Компьютер перестал включаться, думал, что понадобится покупать новый. В сервисе всё
+                                починили за пару часов, да ещё и почистили систему от пыли. Отличная работа!"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__wrapper">
+                    <div class="footer__logo">
+                        <img src="icons/logo.svg" alt="логотип">
+                        <div class="logo_text">
+                            <div class="logo_title">Quick</div>
+                            <div class="logo_subtitle">Repair</div>
+                        </div>
+                    </div>
+                    <nav class="footer__nav">
+                        <h5>Навигация</h5>
+                        <ul class="footer__list">
+                            <li><a class="footer__list_item" href="#">О нас</a></li>
+                            <li><a class="footer__list_item" href="#">Услуги</a></li>
+                            <li><a class="footer__list_item" href="#">Контакты</a></li>
+                        </ul>
+                    </nav>
+                    <div class="footer__contacts">
+                        <h5>Контактная информация</h5>
+                        <div class="footer__social">
+                            <div class="footer__social_item">
+                                <img src="icons/geo-location.svg" alt="Иконка геолокации">
+                                <a
+                                    href="https://yandex.ru/maps/20121/gryazovets/house/ulitsa_lenina_53_66/YEkYdAJjTUcAQFtifXR2eH5nbQ==/?ll=40.253422%2C58.879273&z=20.08">Найди
+                                    нас на карте</a>
+                            </div>
+                            <div class="footer__social_item">
+                                <img src="icons/phone.svg" alt="Иконка телефона">
+                                <!-- FIXME -->
+                                <a href="tel:+79815061868">+7 (981) 506-18-68</a>
+                            </div>
+                            <div class="footer__social_item">
+                                <img src="icons/email.svg" alt="Иконка почты">
+                                <a href="mailto:quickrepairgr@gmail.com">quickrepairgr@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer__news">
+                        <h5>Новости</h5>
+                        <p>Подпишитесь на наши новости, чтобы не пропустить последние обновления!</p>
+                        <form class="footer__form" action="/submit-email" method="POST">
+                            <label for="email" hidden>Ваш Email:</label>
+                            <input type="email" id="email" name="email" required placeholder="Введите ваш email">
+                            <button class="button" type="submit">Подтвердить</button>
+                        </form>
+                    </div>
+                </div>
+                <hr>
+                <div class="footer__copyright">
+                    Copyright 2024, ВСЕ ПРАВА ЗАЩИЩЕНЫ
+                </div>
+            </div>
+        </footer>
 
     </main>
 

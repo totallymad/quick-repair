@@ -7,6 +7,11 @@
     --text-color-white: #fff;
 }
 
+[data-theme="dark"] {
+    --main-color: #121212;
+    --main-green-color: #0288D1;
+}
+
 *,
 ::after,
 ::before {

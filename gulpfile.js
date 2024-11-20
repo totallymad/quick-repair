@@ -4,7 +4,7 @@ const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cleanCSS = require('gulp-clean-css');
 const babel = require('gulp-babel');
-const uglify = require('gulp-uglify');
+const terser = require('gulp-terser');  // Используем gulp-terser вместо terser
 const rename = require("gulp-rename");
 const browserSync = require('browser-sync').create();
 const htmlmin = require('gulp-htmlmin');
@@ -49,7 +49,7 @@ gulp.task('styles', function () {
 gulp.task('scripts', function () {
   return gulp.src(paths.scripts.src)
     .pipe(babel({ presets: ['@babel/preset-env'] })) // Транспиляция JS через Babel
-    .pipe(uglify()) // Минификация JavaScript
+    .pipe(terser())  // Используем gulp-terser для минификации
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest(paths.scripts.dest))
     .pipe(browserSync.stream());

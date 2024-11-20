@@ -1,0 +1,53 @@
+.reviews {
+    padding-top: 3.4rem;
+    min-height: 101rem;
+    background: url('../../../img/backgrounds/reviews.jpg') no-repeat center / cover;
+
+    &-dark {
+        background: url('../../../img/backgrounds/reviews-dark.jpg') no-repeat center / cover;
+    }
+
+    &__wrapper {
+        max-width: 120rem;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+        margin-top: 4rem;
+    }
+
+    &__card {
+        display: flex;
+        align-items: center;
+        width: 100rem;
+        min-height: 17rem;
+        gap: 2.5rem;
+        padding: 2.4rem 8.4rem 2.4rem 5.6rem;
+        border-radius: 105px;
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .2);
+        background-color: var(--text-color-white);
+
+        h5 {
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 2rem;
+            font-weight: 500;
+        }
+
+        &:nth-child(even) {
+            align-self: flex-end;
+            flex-direction: row-reverse;
+
+            h5 {
+                text-align: right;
+            }
+
+            p {
+                text-align: right;
+            }
+        }
+    }
+}

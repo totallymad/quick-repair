@@ -23,9 +23,11 @@
     "gulp-postcss": "^10.0.0",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^5.0.0",
+    "gulp-terser": "^2.1.0",
     "gulp-uglify": "^3.0.2",
     "postcss-nested": "^7.0.2",
-    "sass": "^1.35.1"
+    "sass": "^1.35.1",
+    "terser": "^5.36.0"
   },
   "babel": {
     "presets": [

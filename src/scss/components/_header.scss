@@ -18,11 +18,11 @@
 
     &__social {
         display: flex;
-        gap: 40px;
         align-items: center;
 
         &_item {
-            padding-left: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
             position: relative;
             display: flex;
             align-items: center;
@@ -58,27 +58,18 @@
             background: var(--main-green-color);
         }
     }
-
-    // &__button {
-    //     width: 21rem;
-    //     height: 4rem;
-    //     border-radius: 33px;
-    //     background: var(--main-green-color);
-    //     border: none;
-    //     font-family: Montserrat, sans-serif;
-    //     font-weight: 600;
-    //     font-size: 1.7rem;
-
-    //     &:hover {
-    //         cursor: pointer;
-    //     }
-    // }
 }
 
 .subheader {
     min-height: 9rem;
     color: var(--text-color);
     padding: 1.1rem 0;
+
+    &-dark {
+        background: rgba(18, 18, 18, .85);
+
+        
+    }
 
     .container {
         display: flex;
@@ -100,6 +91,7 @@
         }
 
         .logo_title {
+            letter-spacing: 1.75px;
             font-weight: 800;
             font-size: 2.5rem;
             color: var(--main-green-color)

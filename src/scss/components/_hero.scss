@@ -1,8 +1,11 @@
 .hero {
     width: 100%;
     min-height: 60rem;
-    background: url('../img/backgrounds/main-section.jpg') center center / cover no-repeat;
+    background: url('../img/backgrounds/main-section-light.jpg') center center / cover no-repeat;
 
+    &-dark {
+        background: url('../img/backgrounds/main-section-dark.jpg') center center / cover no-repeat;
+    }
 
     .container {
         max-width: 120rem;

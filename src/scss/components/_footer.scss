@@ -1,0 +1,204 @@
+.footer {
+    min-height: 36rem;
+    background: var(--main-color);
+
+    .container {
+        max-width: 120rem;
+        margin: 0 auto;
+
+        hr {
+            margin-top: 6rem;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        gap: 5rem;
+        padding-top: 3rem;
+    }
+
+    &__logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: #fff;
+        width: 20rem;
+        height: 10rem;
+        border-radius: 10px;
+        padding: 1.5rem 1.2rem;
+        // margin-right: 14rem;
+
+        img {
+            width: 7rem;
+            height: 7rem;
+        }
+
+        .logo_text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .logo_title {
+            letter-spacing: 1.75px;
+            font-weight: 800;
+            font-size: 2.5rem;
+            color: var(--main-green-color)
+        }
+
+        .logo_subtitle {
+            font-weight: 800;
+            font-size: 2.5rem;
+        }
+    }
+
+    &__nav {
+        h5 {
+            color: var(--text-color-white);
+            position: relative;
+            font-size: 2rem;
+            font-weight: 700;
+
+            &::after {
+                content: "";
+                position: absolute;
+                width: 7rem;
+                height: 3px;
+                left: 0;
+                bottom: -5px;
+                background-color: var(--main-green-color)
+            }
+        }
+    }
+
+    &__list {
+        margin-top: 1.5rem;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 1.9rem;
+
+        &_item {
+            color: var(--text-color-white);
+            text-decoration: none;
+            font-size: 1.7rem;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__contacts {
+        h5 {
+            color: var(--text-color-white);
+            position: relative;
+            font-size: 2rem;
+            font-weight: 700;
+
+            &::after {
+                content: "";
+                position: absolute;
+                width: 7rem;
+                height: 3px;
+                left: 0;
+                bottom: -5px;
+                background-color: var(--main-green-color)
+            }
+        }
+
+    }
+
+    &__social {
+        display: flex;
+        flex-direction: column;
+        gap: 1.9rem;
+        margin-top: 1.7rem;
+
+        &_item {
+            position: relative;
+            display: flex;
+            align-items: start;
+
+            img {
+                position: absolute;
+                top: -2px;
+            }
+
+            a {
+                margin-left: 3rem;
+                text-decoration: none;
+                color: var(--text-color-white);
+
+            }
+        }
+    }
+
+    &__news {
+        width: 31rem;
+
+        h5 {
+            color: var(--text-color-white);
+            position: relative;
+            font-size: 2rem;
+            font-weight: 700;
+
+            &::after {
+                content: "";
+                position: absolute;
+                width: 7rem;
+                height: 3px;
+                left: 0;
+                bottom: -5px;
+                background-color: var(--main-green-color)
+            }
+        }
+
+        p {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-top: 1.7rem;
+            color: var(--text-color-white);
+        }
+
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        margin-top: 2.1rem;
+
+        input {
+            font-family: Montserrat, sans-serif;
+            border-radius: 10px;
+            height: 3.1rem;
+            border: 1px solid #fff;
+            color: #fff;
+            background: transparent;
+            padding-top: .7rem;
+            padding-bottom: .7rem;
+            padding-left: 2.5rem;
+            margin-bottom: 2.1rem;
+        }
+
+        input::placeholder {
+            color: #fff;
+        }
+
+        button {
+            width: 100%;
+        }
+
+    }
+
+    &__copyright {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-top: 2.4rem;
+        color: #fff;
+    }
+
+}

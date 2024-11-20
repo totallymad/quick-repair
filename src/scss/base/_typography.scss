@@ -1,0 +1,64 @@
+.title {
+    margin: 0 auto;
+    white-space: pre;
+    display: flex;
+    /* Используем inline-flex для управления выравниванием */
+    align-items: center;
+    /* Центрируем содержимое по вертикали */
+    width: fit-content;
+    /* Ширина по содержимому */
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--text-color);
+    text-transform: uppercase;
+    background: var(--main-green-color);
+    padding: 10px 20px;
+    border-radius: 27px;
+
+    &::before {
+        content: '';
+        display: inline-block;
+        width: 2.5rem;
+        height: 2.5rem;
+        background: url('../../icons/gear-black.svg') no-repeat center;
+        background-size: contain;
+        margin-right: 1rem;
+        align-self: center;
+    }
+
+    &::after {
+        content: '';
+        display: inline-block;
+        width: 2.5rem;
+        height: 2.5rem;
+        background: url('../../icons/gear-black.svg') no-repeat center;
+        background-size: contain;
+        margin-left: 1rem;
+    }
+
+    &-green {
+        background: transparent;
+        color: var(--main-green-color);
+
+        &::before {
+            background: url('../../icons/gear-green.svg') no-repeat center;
+        }
+
+        &::after {
+            background: url('../../icons/gear-green.svg') no-repeat center;
+        }
+    }
+}
+
+.subtitle {
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 1.3rem;
+    color: var(--text-color-white);
+
+    &-black {
+        color: var(--text-color);
+    }
+}

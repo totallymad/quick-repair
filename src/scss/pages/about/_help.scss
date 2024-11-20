@@ -1,0 +1,82 @@
+.help {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, #ffffff 50%),
+        url('../../../img/backgrounds/how-can-we-help.jpg') no-repeat center top;
+    background-size: cover;
+    min-height: 70rem;
+    padding-top: 6rem;
+
+    &-dark {
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, #ffffff 50%),
+            url('../../../img/backgrounds/how-can-we-help-dark.jpg') no-repeat center top;
+        background-size: cover;
+
+    }
+
+    .container {
+        max-width: 120rem;
+        margin: 0 auto;
+        padding: 7rem 15rem 4rem;
+    }
+
+    &__wrapper {
+        display: flex;
+        gap: 3rem;
+
+
+        &_item {
+            width: 32rem;
+            height: 38rem;
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 6rem 2rem 3.5rem;
+            gap: 3.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .2);
+            transition: all .6s;
+
+            &:hover {
+                cursor: pointer;
+                background: var(--main-green-color);
+                transform: scale(1.1);
+
+                img {
+                    background: #fff;
+                }
+
+                h4 {
+                    color: #fff;
+                }
+
+                p {
+                    color: #fff;
+                }
+            }
+
+            img {
+                width: 9rem;
+                height: 9rem;
+                padding: 2.5rem;
+                background: rgba(143, 197, 85, .3);
+                border-radius: 100%;
+            }
+
+            h4 {
+                font-size: 2rem;
+                text-align: center;
+                font-weight: 400;
+            }
+
+            p {
+                font-size: 1.5rem;
+                text-align: center;
+                font-weight: 400;
+            }
+
+            &-active {
+                background: var(--main-green-color);
+            }
+        }
+    }
+}
