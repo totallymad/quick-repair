@@ -1,2 +1,6 @@
-@import "base.scss";
-@import "header.scss";
+@import "./base/base.scss";
+@import "./base/utilities";
+@import "./components/button.scss";
+@import "./components/header.scss";
+@import "./components/hero.scss";
+@import "./pages/about/about.scss"

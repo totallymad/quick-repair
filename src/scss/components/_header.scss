@@ -1,0 +1,173 @@
+.header {
+    background-color: var(--main-color);
+    color: var(--text-color-white);
+    min-height: 6rem;
+    padding: 12px 0;
+
+    .container {
+        max-width: 120rem;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        align-items: center;
+    }
+
+    &__toggle {
+        width: 21rem;
+    }
+
+    &__social {
+        display: flex;
+        gap: 40px;
+        align-items: center;
+
+        &_item {
+            padding-left: 10px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            &:first-child {
+                padding-left: 0;
+            }
+
+            &:first-child::before {
+                height: 0%;
+            }
+
+            a {
+                text-decoration: none;
+                font-size: 1.2rem;
+                color: var(--text-color-white);
+
+                &:hover {
+                    cursor: pointer;
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        &_item::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 2px;
+            height: 100%;
+            background: var(--main-green-color);
+        }
+    }
+
+    // &__button {
+    //     width: 21rem;
+    //     height: 4rem;
+    //     border-radius: 33px;
+    //     background: var(--main-green-color);
+    //     border: none;
+    //     font-family: Montserrat, sans-serif;
+    //     font-weight: 600;
+    //     font-size: 1.7rem;
+
+    //     &:hover {
+    //         cursor: pointer;
+    //     }
+    // }
+}
+
+.subheader {
+    min-height: 9rem;
+    color: var(--text-color);
+    padding: 1.1rem 0;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        max-width: 120rem;
+        align-items: center;
+
+    }
+
+    &__logo {
+        display: flex;
+        gap: 10px;
+
+        .logo_text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .logo_title {
+            font-weight: 800;
+            font-size: 2.5rem;
+            color: var(--main-green-color)
+        }
+
+        .logo_subtitle {
+            font-weight: 800;
+            font-size: 2.5rem;
+        }
+    }
+
+    &__menu {
+        display: flex;
+        list-style: none;
+        gap: 7rem;
+        font-size: 1.7rem;
+        font-weight: 700;
+
+        &_link {
+            display: block;
+            position: relative;
+            text-decoration: none;
+            color: var(--text-color);
+            transition: .2s all;
+            padding: 5px 0;
+
+            &:hover {
+                color: var(--main-green-color);
+                transform: scale(1.1);
+            }
+
+            &-active {
+                color: var(--main-green-color);
+                font-style: italic;
+                transform: scale(1.1);
+
+                &::after {
+                    bottom: 0;
+                    content: "";
+                    /* Обязательно для псевдоэлементов */
+                    position: absolute;
+                    left: 0;
+                    width: 100%;
+                    height: 1px;
+                    background-color: black;
+                }
+
+                &::before {
+                    top: 0;
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    width: 100%;
+                    height: 1px;
+                    background-color: black;
+                }
+            }
+        }
+    }
+
+    &__login-wrapper {
+        display: flex;
+        gap: 3rem;
+
+        button {
+            border: none;
+            background: transparent;
+            cursor: pointer;
+        }
+    }
+}

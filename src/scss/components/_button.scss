@@ -1,0 +1,21 @@
+.button {
+    width: 21rem;
+    height: 4rem;
+    border-radius: 33px;
+    background: var(--main-green-color);
+    border: none;
+    font-family: Montserrat, sans-serif;
+    font-weight: 600;
+    font-size: 1.7rem;
+    transition: all .3s;
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+
+    &-big {
+        width: 22rem;
+        height: 6rem;
+    }
+}

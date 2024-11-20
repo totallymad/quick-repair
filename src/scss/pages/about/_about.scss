@@ -1,0 +1,18 @@
+.about {
+    background: url('../../../img/backgrounds/about.jpg') no-repeat center / cover;
+    min-height: 70rem;
+    width: 100%;
+
+    .container {
+        max-width: 120rem;
+        margin: 0 auto;
+        padding: 8rem 6rem 8rem 7.5rem;
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        width: 50%;
+    }
+}

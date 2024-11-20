@@ -12,27 +12,86 @@
 </head>
 
 <body>
-
-    <header class="header">
-        <div class="container">
-            <div class="header__toggle">Toggle</div>
-            <div class="header__social">
-                <div class="header__social_item">
-                    <img src="icons/geo-location.svg" alt="Иконка геолокации">
-                    <a href="#">Найди нас на карте</a>
+    <header>
+        <div class="header">
+            <div class="container">
+                <div class="header__toggle">Toggle</div>
+                <div class="header__social">
+                    <div class="header__social_item">
+                        <img src="icons/geo-location.svg" alt="Иконка геолокации">
+                        <a href="#">Найди нас на карте</a>
+                    </div>
+                    <div class="header__social_item">
+                        <img src="icons/phone.svg" alt="Иконка телефона">
+                        <a href="#">89210519686</a>
+                    </div>
+                    <div class="header__social_item">
+                        <img src="icons/email.svg" alt="Иконка почты">
+                        <a href="#">quickrepairgr@gmail.com</a>
+                    </div>
                 </div>
-                <div class="header__social_item">
-                    <img src="icons/phone.svg" alt="Иконка телефона">
-                    <a href="#">89210519686</a>
+                <button class="button">Заказать звонок</button>
+            </div>
+        </div>
+        <div class="subheader">
+            <div class="container">
+                <div class="subheader__logo">
+                    <img src="icons/logo.svg" alt="логотип">
+                    <div class="logo_text">
+                        <div class="logo_title">Quick</div>
+                        <div class="logo_subtitle">Repair</div>
+                    </div>
                 </div>
-                <div class="header__social_item">
-                    <img src="icons/email.svg" alt="Иконка почты">
-                    <a href="#">quickrepairgr@gmail.com</a>
+                <nav>
+                    <ul class="subheader__menu">
+                        <li><a class="subheader__menu_link subheader__menu_link-active" href="#">О нас</a></li>
+                        <li><a class="subheader__menu_link" href="#">Услуги</a></li>
+                        <li><a class="subheader__menu_link" href="#">Контакты</a></li>
+                    </ul>
+                </nav>
+                <div class="subheader__login-wrapper">
+                    <button><img src="icons/register.svg" alt="регистрация"></button>
+                    <button><img src="icons/login.svg" alt="вход"></button>
                 </div>
             </div>
-            <button class="header__button">Заказать звонок</button>
         </div>
     </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero__text">
+                    <h1 class="hero__text_title"><span class="text-bold text-green">Проблемы</span> <span
+                            class="text-bold">с компьютером?</span> <br> Мы найдем решение!</h1>
+                    <p class="hero__text_descr">Мы - профессионалы в ремонте ноутбуков и компьютерной техники с более
+                        чем 10-летним опытом.</p>
+                    <button class="button button-big">Посмотреть услуги</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="about">
+            <div class="container">
+                <div class="about__text">
+                    <h2 class="about__text_title">О компании</h2>
+                    <h3 class="about__text_subtitle">Успешно производим услуги компьютерного ремонта на протяжение уже
+                        10 лет!</h3>
+                    <p class="about__text_paragraph">Наша компания предоставляет профессиональные услуги по ремонту
+                        ноутбуков и компьютерной техники. Мы гарантируем высокое качество работы, быстрые сроки и
+                        индивидуальный подход к каждому клиенту. </p>
+                    <p class="about__text_paragraph">Независимо от сложности поломки, мы всегда готовы помочь вернуть
+                        ваше оборудование в отличное состояние!</p>
+                    <button class="button button-big">Узнать больше</button>
+                </div>
+                <div class="about__images">
+                    <img src="img/about-photos/pc-cpu.png" alt="процессор компьютера">
+                    <img src="img/about-photos/pc-motherboard.png" alt="материнская плата компьюетра">
+                </div>
+            </div>
+        </section>
+
+
+    </main>
 
 </body>
 
