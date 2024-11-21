@@ -3,6 +3,10 @@
     min-height: 6rem;
     padding: 12px 0;
 
+    @include respond(tab-land) {
+        padding: 12px 12px;
+    }
+
     .container {
         max-width: 120rem;
         display: flex;
@@ -19,6 +23,10 @@
         display: flex;
         align-items: center;
 
+        // @include respond(tab-port) {
+        //     display: none;
+        // }
+
         &_item {
             padding-left: 20px;
             padding-right: 20px;
@@ -29,10 +37,18 @@
 
             &:first-child {
                 padding-left: 0;
+
             }
 
             &:first-child::before {
                 height: 0%;
+            }
+
+            &:last-child {
+
+                @include respond(tab-port) {
+                    display: none;
+                }
             }
 
             a {
@@ -62,11 +78,14 @@
 .subheader {
     min-height: 9rem;
     padding: 1.1rem 0;
+    position: relative;
+
+    @include respond(tab-land) {
+        padding: 12px 12px;
+    }
 
     &-dark {
         background: rgba(18, 18, 18, .85);
-
-
     }
 
     .container {
@@ -76,6 +95,67 @@
         max-width: 120rem;
         align-items: center;
 
+    }
+
+    &__menu-wrapper {
+        display: flex;
+
+        @include respond(tab-port) {
+            display: none;
+            margin-top: 1rem;
+            flex-direction: column;
+            background-color: var(--bg-color);
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+            border-radius: 8px;
+            /* Красивая форма */
+            transition: all 0.3s ease;
+
+            &.active {
+                display: flex;
+                /* Показываем меню */
+            }
+        }
+    }
+
+    .hamburger {
+        display: none;
+
+        @include respond(tab-port) {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            width: 30px;
+            height: 30px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 15;
+
+            span {
+                display: block;
+                width: 100%;
+                height: 3px;
+                background-color: var(--text-color);
+                transition: all 0.3s ease;
+            }
+
+            /* Анимация гамбургера */
+            &.active span:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            &.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            &.active span:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+
+        }
     }
 
     &__logo {
@@ -117,6 +197,10 @@
             transition: .2s all;
             padding: 5px 0;
 
+            @include respond(tab-port) {
+                // display: none;
+            }
+
             &:hover {
                 color: var(--main-green-color);
                 transform: scale(1.1);
@@ -152,8 +236,10 @@
     }
 
     &__login-wrapper {
+        width: 17rem;
         display: flex;
         gap: 3rem;
+        justify-content: flex-end;
 
         button {
             border: none;
@@ -167,4 +253,3 @@
         }
     }
 }
-

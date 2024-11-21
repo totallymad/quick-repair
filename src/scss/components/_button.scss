@@ -9,6 +9,14 @@
     font-size: 1.7rem;
     transition: all .3s;
 
+    @include respond(tab-land) {
+        width: 19rem;
+    }
+
+    @include respond(tab-port) {
+        width: 16rem;
+    }
+
     &:hover {
         cursor: pointer;
         transform: scale(1.1);

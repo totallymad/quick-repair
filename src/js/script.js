@@ -23,8 +23,17 @@ const headsetIcon = document.querySelector('.headset-icon');
 const stopwatchIcon = document.querySelector('.stopwatch-icon');
 const gearIconText = document.querySelector('.title-light');
 
-console.log(registrIcon)
 
+document.addEventListener("DOMContentLoaded", () => {
+    const hamburger = document.querySelector(".hamburger");
+    const menuWrapper = document.querySelector(".subheader__menu-wrapper");
+
+    hamburger.addEventListener("click", () => {
+        // Переключаем активное состояние
+        hamburger.classList.toggle("active");
+        menuWrapper.classList.toggle("active");
+    });
+});
 
 function iconMode(theme) {
     logoIcon.forEach(icon => icon.src = `icons/logo-${theme}.svg`);
