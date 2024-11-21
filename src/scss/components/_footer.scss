@@ -1,6 +1,7 @@
 .footer {
     min-height: 36rem;
     background: var(--main-color);
+    padding: 0 1rem;
 
     .container {
         max-width: 120rem;
@@ -16,7 +17,23 @@
         justify-content: space-between;
         gap: 5rem;
         padding-top: 3rem;
+
+        @include respond(tab-port) {
+            // flex-direction: column;
+            // align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 7rem;
+        }
+
+        @include respond(phone) {
+            flex-direction: column;
+            align-items: center;
+            gap: 3rem;
+        }
     }
+
+
 
     &__logo {
         display: flex;
@@ -28,6 +45,10 @@
         border-radius: 10px;
         padding: 1.5rem 1.2rem;
         // margin-right: 14rem;
+
+        @include respond(big-phone) {
+            display: none;
+        }
 
         img {
             width: 7rem;
@@ -60,6 +81,10 @@
             font-size: 2rem;
             font-weight: 700;
 
+            @include respond(phone) {
+                font-size: 3rem;
+            }
+
             &::after {
                 content: "";
                 position: absolute;
@@ -67,7 +92,11 @@
                 height: 3px;
                 left: 0;
                 bottom: -5px;
-                background-color: var(--main-green-color)
+                background-color: var(--main-green-color);
+
+                @include respond(phone) {
+                    width: 100%;
+                }
             }
         }
     }
@@ -79,10 +108,19 @@
         flex-direction: column;
         gap: 1.9rem;
 
+        @include respond(phone) {
+            margin-top: 2rem;
+            align-items: center;
+        }
+
         &_item {
             color: var(--text-color-white);
             text-decoration: none;
             font-size: 1.7rem;
+
+            @include respond(phone) {
+                font-size: 2rem;
+            }
 
             &:hover {
                 text-decoration: underline;
@@ -97,6 +135,10 @@
             font-size: 2rem;
             font-weight: 700;
 
+            @include respond(phone) {
+                font-size: 3rem;
+            }
+
             &::after {
                 content: "";
                 position: absolute;
@@ -104,7 +146,11 @@
                 height: 3px;
                 left: 0;
                 bottom: -5px;
-                background-color: var(--main-green-color)
+                background-color: var(--main-green-color);
+
+                @include respond(phone) {
+                    width: 100%;
+                }
             }
         }
 
@@ -116,10 +162,19 @@
         gap: 1.9rem;
         margin-top: 1.7rem;
 
+        @include respond(phone) {
+            align-items: center;
+            margin-top: 2rem;
+        }
+
         &_item {
             position: relative;
             display: flex;
             align-items: start;
+
+            @include respond(phone) {
+                font-size: 2rem;
+            }
 
             img {
                 position: absolute;
@@ -131,6 +186,10 @@
                 text-decoration: none;
                 color: var(--text-color-white);
 
+                @include respond(tab-port) {
+                    margin-left: 5rem;
+                }
+
             }
         }
     }
@@ -138,11 +197,22 @@
     &__news {
         width: 31rem;
 
+        @include respond(phone) {
+            align-items: center;
+            margin-top: 2rem;
+            width: 50rem;
+        }
+
         h5 {
             color: var(--text-color-white);
             position: relative;
             font-size: 2rem;
             font-weight: 700;
+
+            @include respond(phone) {
+                font-size: 3rem;
+                text-align: center;
+            }
 
             &::after {
                 content: "";
@@ -151,7 +221,12 @@
                 height: 3px;
                 left: 0;
                 bottom: -5px;
-                background-color: var(--main-green-color)
+                background-color: var(--main-green-color);
+
+                @include respond(phone) {
+                    width: 260px;
+                    left: 34px;
+                }
             }
         }
 
@@ -160,6 +235,12 @@
             font-weight: 500;
             margin-top: 1.7rem;
             color: var(--text-color-white);
+
+            @include respond(phone) {
+                margin-top: 3rem;
+                font-size: 2rem;
+                text-align: center;
+            }
         }
 
     }
@@ -180,6 +261,14 @@
             padding-bottom: .7rem;
             padding-left: 2.5rem;
             margin-bottom: 2.1rem;
+
+            @include respond(phone) {
+                height: 40px;
+
+                font-size: 2rem;
+                text-align: center;
+                padding: 2rem 0 2rem;
+            }
         }
 
         input::placeholder {
@@ -188,6 +277,13 @@
 
         button {
             width: 100%;
+
+            @include respond(phone) {
+                height: 40px;
+                font-size: 2rem;
+                text-align: center;
+                padding: 2rem 0 2rem 0;
+            }
         }
 
     }
@@ -198,6 +294,7 @@
         font-size: 1.5rem;
         font-weight: 500;
         margin-top: 2.4rem;
+        padding-bottom: 2.4rem;
         color: #fff;
     }
 

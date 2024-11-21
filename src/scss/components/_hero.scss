@@ -3,6 +3,15 @@
     min-height: 60rem;
     background: url('../img/backgrounds/main-section-light.jpg') center center / cover no-repeat;
 
+    @include respond(tab-port) {
+        min-height: 70rem;
+    }
+
+    @include respond(big-phone) {
+        min-height: 80vh;
+    }
+
+
     &-dark {
         background: url('../img/backgrounds/main-section-dark.jpg') center center / cover no-repeat;
     }
@@ -12,16 +21,29 @@
         margin: 0 auto;
         padding-top: 17rem;
         padding-left: 13rem;
+
+        @include respond(big-phone) {
+            padding-left: 6rem;
+            padding-right: 6rem;
+        }
     }
 
     &__text {
         width: 65%;
+
+        @include respond(big-phone) {
+            width: 100%;
+        }
 
         &_title {
             font-size: 4rem;
             margin-bottom: 3rem;
             color: var(--text-color-white);
             font-weight: 300;
+
+            @include respond(big-phone) {
+                text-align: center;
+            }
         }
 
         &_descr {
@@ -30,6 +52,10 @@
             color: var(--text-color-white);
             letter-spacing: 1.2px;
             margin-bottom: 3rem;
+
+            @include respond(big-phone) {
+                text-align: center;
+            }
         }
 
     }

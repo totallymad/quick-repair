@@ -26,4 +26,24 @@
         width: 22rem;
         height: 6rem;
     }
+
+    &-center-tablet {
+        @include respond(tab-port) {
+            display: block;
+            margin: 0 auto;
+            width: 40rem;
+            height: 10rem;
+            font-size: 2.5rem;
+        }
+    }
+
+    &-center-phone {
+        @include respond(big-phone) {
+            display: block;
+            margin: 0 auto;
+            width: 40rem;
+            height: 10rem;
+            font-size: 2rem;
+        }
+    }
 }

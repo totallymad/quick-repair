@@ -23,9 +23,9 @@
         display: flex;
         align-items: center;
 
-        // @include respond(tab-port) {
-        //     display: none;
-        // }
+        @include respond(big-phone) {
+            display: none;
+        }
 
         &_item {
             padding-left: 20px;
@@ -88,6 +88,137 @@
         background: rgba(18, 18, 18, .85);
     }
 
+
+    .hamburger {
+        display: none;
+        background: none;
+        border: none;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 5px;
+        cursor: pointer;
+        z-index: 1000;
+
+        span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-color);
+            transition: all 0.3s;
+        }
+
+        &.active span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        &.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        &.active span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        @include respond(tab-port) {
+            display: flex;
+        }
+    }
+
+    .mobile-menu {
+        display: none;
+        margin-top: 10px;
+        // position: absolute;
+        left: 0;
+        width: 100%;
+        background: var(--background-color);
+        flex-direction: column;
+        padding: 10px;
+        transition: all .3s;
+
+        &.active {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding-left: 30px;
+            padding-right: 30px;
+
+            @include respond(phone) {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+
+        .mobile-menu__list {
+            display: flex;
+            gap: 15px;
+            list-style: none;
+
+            .mobile-menu__link {
+                position: relative;
+                text-decoration: none;
+                font-size: 2rem;
+                font-weight: 700;
+                color: var(--text-color);
+                transition: color 0.2s;
+                padding: 5px 0;
+
+
+                &:hover {
+                    color: var(--main-green-color);
+                }
+
+                &-active {
+                    color: var(--main-green-color);
+                    font-style: italic;
+                    transform: scale(1.1);
+
+                    &::after {
+                        bottom: 0;
+                        content: "";
+                        /* Обязательно для псевдоэлементов */
+                        position: absolute;
+                        left: 0;
+                        width: 100%;
+                        height: 2px;
+                        background-color: var(--text-color);
+                    }
+
+                    &::before {
+                        top: 0;
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        width: 100%;
+                        height: 2px;
+                        background-color: var(--text-color);
+                    }
+                }
+            }
+        }
+
+        .mobile-menu__login-wrapper {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+
+            button {
+                border: none;
+                background: transparent;
+                cursor: pointer;
+
+                img {
+                    width: 5rem;
+                    height: auto;
+                }
+            }
+        }
+    }
+
+
+
     .container {
         display: flex;
         justify-content: space-between;
@@ -95,67 +226,6 @@
         max-width: 120rem;
         align-items: center;
 
-    }
-
-    &__menu-wrapper {
-        display: flex;
-
-        @include respond(tab-port) {
-            display: none;
-            margin-top: 1rem;
-            flex-direction: column;
-            background-color: var(--bg-color);
-            padding: 2rem;
-            text-align: center;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-            z-index: 10;
-            border-radius: 8px;
-            /* Красивая форма */
-            transition: all 0.3s ease;
-
-            &.active {
-                display: flex;
-                /* Показываем меню */
-            }
-        }
-    }
-
-    .hamburger {
-        display: none;
-
-        @include respond(tab-port) {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-            width: 30px;
-            height: 30px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            z-index: 15;
-
-            span {
-                display: block;
-                width: 100%;
-                height: 3px;
-                background-color: var(--text-color);
-                transition: all 0.3s ease;
-            }
-
-            /* Анимация гамбургера */
-            &.active span:nth-child(1) {
-                transform: translateY(8px) rotate(45deg);
-            }
-
-            &.active span:nth-child(2) {
-                opacity: 0;
-            }
-
-            &.active span:nth-child(3) {
-                transform: translateY(-8px) rotate(-45deg);
-            }
-
-        }
     }
 
     &__logo {
@@ -189,6 +259,10 @@
         font-size: 1.7rem;
         font-weight: 700;
 
+        @include respond(tab-port) {
+            display: none;
+        }
+
         &_link {
             display: block;
             position: relative;
@@ -196,10 +270,6 @@
             color: var(--text-color);
             transition: .2s all;
             padding: 5px 0;
-
-            @include respond(tab-port) {
-                // display: none;
-            }
 
             &:hover {
                 color: var(--main-green-color);
@@ -240,6 +310,11 @@
         display: flex;
         gap: 3rem;
         justify-content: flex-end;
+
+        @include respond(tab-port) {
+            display: none;
+        }
+
 
         button {
             border: none;

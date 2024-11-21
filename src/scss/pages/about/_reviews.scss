@@ -1,7 +1,11 @@
 .reviews {
-    padding-top: 3.4rem;
+    padding: 3.4rem 1rem;
     min-height: 101rem;
     background: url('../../../img/backgrounds/reviews.jpg') no-repeat center / cover;
+
+    @include respond(tab-port) {
+        padding: 3.4rem 1rem;
+    }
 
     &-dark {
         background: url('../../../img/backgrounds/reviews-dark.jpg') no-repeat center / cover;
@@ -27,26 +31,66 @@
         box-shadow: 0 4px 4px 0 var(--box-shadow);
         background-color: var(--card-color);
 
+        @include respond(tab-port) {
+            width: 95%;
+        }
+
+        @include respond(big-phone) {
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            padding-left: 5rem;
+            padding-right: 5rem;
+            padding-bottom: 5rem;
+        }
+
+        img {
+            @include respond(tab-port) {
+                width: 10rem;
+            }
+        }
+
         h5 {
             font-size: 2rem;
             font-weight: 600;
+
+            @include respond(big-phone) {
+                text-align: center;
+            }
         }
 
         p {
             font-size: 2rem;
             font-weight: 500;
+
+            @include respond(big-phone) {
+                text-align: center;
+            }
         }
 
         &:nth-child(even) {
             align-self: flex-end;
             flex-direction: row-reverse;
 
+            @include respond(big-phone) {
+                flex-direction: column;
+
+            }
+
             h5 {
                 text-align: right;
+
+                @include respond(big-phone) {
+                    text-align: center;
+                }
             }
 
             p {
                 text-align: right;
+
+                @include respond(big-phone) {
+                    text-align: center;
+                }
             }
         }
     }
