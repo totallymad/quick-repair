@@ -39,5 +39,8 @@
     "> 1%",
     "maintained node versions",
     "not dead"
-  ]
+  ],
+  "dependencies": {
+    "aos": "^2.3.4"
+  }
 }

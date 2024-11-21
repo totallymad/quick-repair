@@ -9,7 +9,7 @@
     /* Ширина по содержимому */
     font-size: 2.5rem;
     font-weight: 400;
-    color: var(--text-color);
+    color: #000;
     text-transform: uppercase;
     background: var(--main-green-color);
     padding: 10px 20px;
@@ -36,7 +36,7 @@
         margin-left: 1rem;
     }
 
-    &-green {
+    &-light {
         background: transparent;
         color: var(--main-green-color);
 
@@ -46,6 +46,19 @@
 
         &::after {
             background: url('../../icons/gear-green.svg') no-repeat center;
+        }
+    }
+
+    &-dark {
+        background: transparent;
+        color: var(--main-green-color);
+
+        &::before {
+            background: url('../../icons/gear-blue.svg') no-repeat center;
+        }
+
+        &::after {
+            background: url('../../icons/gear-blue.svg') no-repeat center;
         }
     }
 }

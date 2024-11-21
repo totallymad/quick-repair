@@ -6,7 +6,7 @@
     padding-top: 6rem;
 
     &-dark {
-        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, #ffffff 50%),
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, #121212 50%),
             url('../../../img/backgrounds/how-can-we-help-dark.jpg') no-repeat center top;
         background-size: cover;
 
@@ -26,14 +26,14 @@
         &_item {
             width: 32rem;
             height: 38rem;
-            background: #fff;
+            background: var(--card-color);
             display: flex;
             flex-direction: column;
             align-items: center;
             padding: 6rem 2rem 3.5rem;
             gap: 3.5rem;
             border-radius: 1rem;
-            box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .2);
+            box-shadow: 0 4px 4px 0 var(--box-shadow);
             transition: all .6s;
 
             &:hover {
@@ -58,7 +58,7 @@
                 width: 9rem;
                 height: 9rem;
                 padding: 2.5rem;
-                background: rgba(143, 197, 85, .3);
+                background: var(--card-icon-inner);
                 border-radius: 100%;
             }
 

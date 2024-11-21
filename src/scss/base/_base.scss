@@ -5,11 +5,23 @@
     --main-green-color: #8FC555;
     --text-color: #000;
     --text-color-white: #fff;
+    --card-color: #fff;
+    --card-icon-inner: rgba(143, 197, 85, .3);
+    --background-color: #fff;
+    --service-icon-inner: #fff;
+    --box-shadow: rgba(0, 0, 0, .2);
 }
 
 [data-theme="dark"] {
     --main-color: #121212;
     --main-green-color: #0288D1;
+    --text-color: #fff;
+    --card-color: #373737;
+    --card-icon-inner: rgba(24, 24, 24, .8);
+    --background-color: #121212;
+    --service-icon-inner: #686868;
+    --box-shadow: rgba(209, 209, 209, .25);
+
 }
 
 *,

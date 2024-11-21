@@ -1,0 +1,85 @@
+/* Dark Mode Toggle */
+.theme-switch-wrapper {
+    width: 21rem;
+    display: flex;
+    align-items: center;
+    z-index: 100;
+    // position: fixed;
+    right: 25px;
+    top: 30px;
+    font-size: 30px;
+
+}
+
+.theme-switch-wrapper span {
+    margin-right: 10px;
+    font-size: 1.5rem;
+}
+
+#toggle-icon {
+    display: flex;
+    align-items: center;
+    /* Центрирует содержимое по вертикали */
+    justify-content: center;
+    /* (Необязательно) Центрирует содержимое по горизонтали */
+    height: 100%;
+    /* Убедитесь, что контейнер имеет высоту */
+}
+
+#toggle-icon img {
+    width: 25px;
+    height: 25px;
+}
+
+.toggle-text {
+    color: #fff 
+}
+
+.theme-switch {
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 60px;
+}
+
+.theme-switch input {
+    display: none;
+}
+
+.slider {
+    background: var(--main-green-color);
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: 0.4s;
+}
+
+.slider::before {
+    background: #fff;
+    bottom: 4px;
+    content: "";
+    height: 26px;
+    left: 4px;
+    position: absolute;
+    transition: 0.4s;
+    width: 26px;
+}
+
+input:checked+.slider {
+    background: var(--main-green-color);
+}
+
+input:checked+.slider::before {
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round::before {
+    border-radius: 50%;
+}

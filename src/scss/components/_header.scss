@@ -1,6 +1,5 @@
 .header {
     background-color: var(--main-color);
-    color: var(--text-color-white);
     min-height: 6rem;
     padding: 12px 0;
 
@@ -62,13 +61,12 @@
 
 .subheader {
     min-height: 9rem;
-    color: var(--text-color);
     padding: 1.1rem 0;
 
     &-dark {
         background: rgba(18, 18, 18, .85);
 
-        
+
     }
 
     .container {
@@ -88,6 +86,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            color: var(--text-color);
         }
 
         .logo_title {
@@ -135,8 +134,8 @@
                     position: absolute;
                     left: 0;
                     width: 100%;
-                    height: 1px;
-                    background-color: black;
+                    height: 2px;
+                    background-color: var(--text-color);
                 }
 
                 &::before {
@@ -145,8 +144,8 @@
                     position: absolute;
                     left: 0;
                     width: 100%;
-                    height: 1px;
-                    background-color: black;
+                    height: 2px;
+                    background-color: var(--text-color);
                 }
             }
         }
@@ -160,6 +159,12 @@
             border: none;
             background: transparent;
             cursor: pointer;
+            transition: all .3s;
+
+            &:hover {
+                transform: scale(1.2);
+            }
         }
     }
 }
+
