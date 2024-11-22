@@ -46,4 +46,19 @@
             font-size: 2rem;
         }
     }
+
+    &-catalog {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        width: 20rem;
+        height: 5.5rem;
+        background: var(--main-color);
+        color: #fff;
+        box-shadow: 0 4px 4px 0 var(--box-shadow);
+
+        &:hover {
+            background: var(--main-green-color);
+        }
+
+    }
 }

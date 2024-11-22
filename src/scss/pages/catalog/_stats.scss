@@ -1,0 +1,83 @@
+.stats {
+    background: url('../../../img/backgrounds/statictics-background.png') center / cover no-repeat;
+    min-height: 56rem;
+    padding: 7.1rem 0 4rem 0;
+
+    &-dark {
+        background: url('../../../img/backgrounds/statictics-background-dark.jpg') center / cover no-repeat;
+
+    }
+
+    .container {
+        max-width: 125rem;
+        margin: 5.6rem auto 0;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 5rem;
+    }
+
+    &__header {
+        display: block;
+        width: 30rem;
+        color: #fff;
+        text-align: center;
+        margin: 0 auto;
+        text-transform: uppercase;
+        font-weight: 400;
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -5px;
+            background-color: #fff;
+        }
+    }
+
+    &__subheader {
+        margin-top: 7rem;
+        font-size: 2.5rem;
+        font-weight: 400;
+        text-transform: capitalize;
+        text-align: center;
+        color: #fff;
+    }
+
+    &__round {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 25rem;
+        height: 25rem;
+        border-radius: 100%;
+        border: 3px solid var(--main-green-color);
+
+        &_text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.7rem;
+
+            h5 {
+                color: #fff;
+                font-size: 3.5rem;
+                font-weight: 800;
+            }
+
+            p {
+                color: #fff;
+                font-size: 2rem;
+                font-weight: 400;
+                text-transform: uppercase;
+                text-align: center;
+            }
+        }
+    }
+
+}

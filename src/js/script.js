@@ -1,5 +1,4 @@
 // Получаем элементы
-
 const toggleSwitch = document.querySelector('input[type="checkbox"');
 const toggleIcon = document.getElementById('toggle-icon');
 const currentTheme = localStorage.getItem('theme') || 'light';
@@ -10,6 +9,8 @@ const heroSection = document.querySelector('.hero');
 const aboutSection = document.querySelector('.about');
 const helpSection = document.querySelector('.help');
 const reviewSection = document.querySelector('.reviews');
+const catalogSection = document.querySelector('.catalog')
+const statsSection = document.querySelector('.stats');
 
 // иконки
 const logoIcon = document.querySelectorAll('.icon-logo');
@@ -48,55 +49,72 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("resize", closeMenuOnResize);
 });
 
-
 function iconMode(theme) {
-    logoIcon.forEach(icon => icon.src = `icons/logo-${theme}.svg`);
-    geoIcon.forEach(icon => icon.src = `icons/geo-location-${theme}.svg`);
-    phoneIcon.forEach(icon => icon.src = `icons/phone-${theme}.svg`);
-    emailIcon.forEach(icon => icon.src = `icons/email-${theme}.svg`);
-    registrIcon.forEach(icon => icon.src = `icons/register-${theme}.svg`);
-    loginIcon.forEach(icon => icon.src = `icons/login-${theme}.svg`);
-    // registrIcon.src = `icons/register-${theme}.svg`;
-    // loginIcon.src = `icons/login-${theme}.svg`;
-    headsetIcon.src = `icons/headset-${theme}.svg`;
-    stopwatchIcon.src = `icons/stopwatch-${theme}.svg`;
-    toolIcon.src = `icons/tools-${theme}.svg`;
+    const icons = [
+        { elements: logoIcon, baseName: 'logo' },
+        { elements: geoIcon, baseName: 'geo-location' },
+        { elements: phoneIcon, baseName: 'phone' },
+        { elements: emailIcon, baseName: 'email' },
+        { elements: registrIcon, baseName: 'register' },
+        { elements: loginIcon, baseName: 'login' },
+        { elements: [headsetIcon], baseName: 'headset' }, // Одиночная иконка
+        { elements: [stopwatchIcon], baseName: 'stopwatch' },
+        { elements: [toolIcon], baseName: 'tools' }
+    ];
+
+    icons.forEach(({ elements, baseName }) => {
+        elements.forEach(icon => {
+            if (icon) {
+                icon.src = `icons/${baseName}-${theme}.svg`;
+            }
+        });
+    });
 }
 
-const arrSection = [heroSection, aboutSection, helpSection, reviewSection];
+const arrSection = [heroSection, aboutSection, helpSection, reviewSection, catalogSection, statsSection];
 
-// Устанавливаем положение слайдера на основе текущей темы
-toggleSwitch.checked = currentTheme === 'dark';
+// Устанавливаем положение слайдера и тему на основе сохранённых данных
+const savedTheme = localStorage.getItem('theme') || 'light'; // Если темы нет, по умолчанию 'light'
+toggleSwitch.checked = savedTheme === 'dark';
+applyTheme(savedTheme);
 
-// Функция для применения темы
-function applyTheme(theme) {
-    if (theme === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        subheader.classList.add('subheader-dark');
-        gearIconText.classList.add(`title-${theme}`);
-        arrSection.forEach(section => section.classList.add(`${section.classList[0]}-dark`));
-        iconMode(theme);
-        // toggleIcon.children[0].textContent = 'Темная тема';
-        toggleIcon.children[0].src = "icons/moon.svg";
-    } else {
-        document.documentElement.setAttribute('data-theme', 'light');
-        subheader.classList.remove('subheader-dark');
-        gearIconText.classList.remove(`title-dark`);
-        arrSection.forEach(section => section.classList.remove(`${section.classList[0]}-dark`));
-        iconMode(theme);
-        // toggleIcon.children[0].textContent = 'Светлая тема';
-        toggleIcon.children[0].src = "icons/solar.svg";
+// Универсальная функция для добавления/удаления классов
+function toggleClass(element, className, shouldAdd) {
+    if (element) {
+        shouldAdd ? element.classList.add(className) : element.classList.remove(className);
     }
 }
 
-// Устанавливаем текущую тему при загрузке страницы
-applyTheme(currentTheme);
+// Функция для применения темы
+function applyTheme(theme) {
+    const isDark = theme === 'dark';
 
-// Добавляем обработчик для переключения темы
+    // Устанавливаем атрибут темы
+    document.documentElement.setAttribute('data-theme', theme);
+
+    // Изменяем классы для `subheader`
+    toggleClass(subheader, 'subheader-dark', isDark);
+
+    // Изменяем классы для `gearIconText`, если элемент существует
+    toggleClass(gearIconText, 'title-dark', isDark);
+
+    // Применяем тему к секциям
+    arrSection.forEach(section => {
+        if (section) {
+            toggleClass(section, `${section.classList[0]}-dark`, isDark);
+        }
+    });
+
+    // Устанавливаем иконку режима
+    iconMode(theme);
+    toggleIcon.children[0].src = isDark ? "icons/moon.svg" : "icons/solar.svg";
+}
+
+// Обработчик переключения темы
 toggleSwitch.addEventListener('change', () => {
     const newTheme = toggleSwitch.checked ? 'dark' : 'light';
-    localStorage.setItem('theme', newTheme);
-    applyTheme(newTheme);
+    localStorage.setItem('theme', newTheme); // Сохраняем тему
+    applyTheme(newTheme); // Применяем тему
 });
 
 const slider = function () {

@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="../node_modules/aos/dist/aos.css" /> -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.min.css">
     <script defer src="js/script.min.js"></script>
     <title>Quick Repair</title>
@@ -14,7 +16,7 @@
 <body>
     <header>
         <div class="header">
-            <div class="container">
+            <div data-aos="fade-down" data-aos-delay="50" class="container">
                 <div class="theme-switch-wrapper">
                     <span id="toggle-icon">
                         <img src="icons/solar.svg" alt="иконка солнца">
@@ -44,7 +46,7 @@
             </div>
         </div>
         <div class="subheader">
-            <div class="container">
+            <div data-aos="zoom-in" class="container">
                 <div class="subheader__logo">
                     <img class="icon-logo" src="icons/logo-light.svg" alt="логотип">
                     <div class="logo_text">
@@ -54,8 +56,10 @@
                 </div>
                 <nav>
                     <ul class="subheader__menu">
-                        <li><a class="subheader__menu_link" href="./index.html">О нас</a></li>
-                        <li><a class="subheader__menu_link subheader__menu_link-active" href="#">Услуги</a></li>
+                        <li><a class="subheader__menu_link " href="./index.html">О нас</a>
+                        </li>
+                        <li><a class="subheader__menu_link subheader__menu_link-active" href="./catalog.html">Услуги</a>
+                        </li>
                         <li><a class="subheader__menu_link" href="./contacts.html">Контакты</a></li>
                     </ul>
                 </nav>
@@ -63,152 +67,195 @@
                     <button><img class="reg-icon" src="icons/register-light.svg" alt="регистрация"></button>
                     <button><img class="log-icon" src="icons/login-light.svg" alt="вход"></button>
                 </div>
+                <button class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <div class="mobile-menu">
+                <ul class="mobile-menu__list">
+                    <li><a class="mobile-menu__link mobile-menu__link-active" href="./index.html">О нас</a></li>
+                    <li><a class="mobile-menu__link" href="./catalog.html">Услуги</a></li>
+                    <li><a class="mobile-menu__link" href="./contacts.html">Контакты</a></li>
+                </ul>
+                <div class="mobile-menu__login-wrapper">
+                    <button><img class="reg-icon" src="icons/register-light.svg" alt="регистрация"></button>
+                    <button><img class="log-icon" src="icons/login-light.svg" alt="вход"></button>
+                </div>
             </div>
         </div>
+
+
     </header>
 
     <main>
         <section class="hero">
             <div class="container">
                 <div class="hero__text">
-                    <h1 class="hero__text_title"><span class="text-bold text-green">Проблемы</span> <span
-                            class="text-bold">с компьютером?</span> <br> Мы найдем решение!</h1>
-                    <p class="hero__text_descr">Мы - профессионалы в ремонте ноутбуков и компьютерной техники с более
+                    <h1 data-aos="fade-up" data-aos-delay="0" class="hero__text_title"><span
+                            class="text-bold text-green">Проблемы</span> <span class="text-bold">с компьютером?</span>
+                        <br> Мы найдем решение!
+                    </h1>
+                    <p data-aos="fade-up" data-aos-delay="50" class="hero__text_descr">Мы - профессионалы в ремонте
+                        ноутбуков и компьютерной техники с более
                         чем 10-летним опытом.</p>
-                    <button class="button button-big">Посмотреть услуги</button>
+                    <button data-aos="fade-up" data-aos-delay="100"
+                        class="button button-big button-center-phone">Посмотреть услуги</button>
                 </div>
             </div>
         </section>
 
-        <section class="about">
-            <h2 class="title">О<span class="text-extrabold"> компании</span></h2>
+        <section class="catalog">
+            <h2 data-aos="zoom-in" class="title title-big">Наш <span class="text-extrabold">каталог</span>
+            </h2>
             <div class="container">
-                <div class="about__text">
-                    <h3 class="about__text_subtitle">Успешно производим услуги компьютерного ремонта на протяжение уже
-                        10 лет!</h3>
-                    <p class="about__text_paragraph">Наша компания предоставляет профессиональные услуги по ремонту
-                        ноутбуков и компьютерной техники. Мы гарантируем высокое качество работы, быстрые сроки и
-                        индивидуальный подход к каждому клиенту. </p>
-                    <p class="about__text_paragraph">Независимо от сложности поломки, мы всегда готовы помочь вернуть
-                        ваше оборудование в отличное состояние!</p>
-                    <button class="button button-big">Узнать больше</button>
+                <div data-aos="zoom-in" class="catalog__card">
+                    <img src="./img/catalog-photos/network.png" alt="фото настройки сети" class="catalog__card_img">
+                    <div class="catalog__card_text">
+                        <h3>Сетевая настройка</h3>
+                        <ul>
+                            <li>Установка и настройка роутеров и сетей Wi-Fi</li>
+                            <li>Настройка локальных сетей для дома или офиса.</li>
+                            <li>Устранение проблем с подключением к интернету.</li>
+                        </ul>
+                    </div>
+                    <button class="button button-catalog">Подробнее</button>
                 </div>
-                <div class="about__images">
-                    <img class="about__images-1" src="img/about-photos/pc-cpu.png" alt="процессор компьютера">
-                    <img class="about__images-2" src="img/about-photos/pc-motherboard.png"
-                        alt="материнская плата компьюетра">
+                <div data-aos="zoom-in" data-aos-delay="100" class="catalog__card">
+                    <img src="./img/catalog-photos/printer.png" alt="принтер" class="catalog__card_img">
+                    <div class="catalog__card_text">
+                        <h3>Ремонт периферии</h3>
+                        <ul>
+                            <li>Ремонт принтеров, сканеров, мониторов.</li>
+                            <li>Настройка локальных сетей для дома или офиса.Обслуживание и чистка внешних устройств.
+                            </li>
+                            <li>Восстановление работы USB-портов.</li>
+                        </ul>
+                    </div>
+                    <button class="button button-catalog">Подробнее</button>
                 </div>
+                <div data-aos="zoom-in" data-aos-delay="200" class="catalog__card">
+                    <img src="./img/catalog-photos/corporation.png" alt="корпоративные услуги"
+                        class="catalog__card_img">
+                    <div class="catalog__card_text">
+                        <h3>Корпоративные услуги</h3>
+                        <ul>
+                            <li>Обслуживание техники в офисах (договор на постоянное обслуживание).</li>
+                            <li>Массовая настройка рабочих станций.</li>
+                            <li>Настройка серверов и сетевого оборудования.</li>
+                        </ul>
+                    </div>
+                    <button class="button button-catalog">Подробнее</button>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="0" class="catalog__card">
+                    <img src="./img/catalog-photos/mobile.png" alt="разобранный смартфон" class="catalog__card_img">
+                    <div class="catalog__card_text">
+                        <h3>Ремонт смартфона</h3>
+                        <ul>
+                            <li>Замена экранов, аккумуляторов и кнопок.</li>
+                            <li>Устранение программных сбоев и настройка устройств.</li>
+                            <li>Быстрый ремонт любых моделей с гарантией.</li>
+                        </ul>
+                    </div>
+                    <button class="button button-catalog">Подробнее</button>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="100" class="catalog__card">
+                    <img src="./img/catalog-photos/harddisk.png" alt="жесткий диск" class="catalog__card_img">
+                    <div class="catalog__card_text">
+                        <h3>Восстановление данных</h3>
+                        <ul>
+                            <li>Вернем утраченные файлы с HDD, SSD и флешек.</li>
+                            <li>Восстановление информации после форматирования или повреждений.</li>
+                            <li>Безопасность ваших данных — наш приоритет.</li>
+                        </ul>
+                    </div>
+                    <button class="button button-catalog">Подробнее</button>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="200" class="catalog__card">
+                    <img src="./img/catalog-photos/pc-repair.png" alt="компьютер" class="catalog__card_img">
+                    <div class="catalog__card_text">
+                        <h3>Ремонт компьютера</h3>
+                        <ul>
+                            <li>Диагностика и замена неисправных комплектующих.</li>
+                            <li>Устранение перегрева, настройка программ и операционной системы.</li>
+                            <li>Оптимизация работы для повышения производительности.</li>
+                        </ul>
+                    </div>
+                    <button class="button button-catalog">Подробнее</button>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="0" class="catalog__card">
+                    <img src="./img/catalog-photos/laptop.png" alt="разобранный ноутбук" class="catalog__card_img">
+                    <div class="catalog__card_text">
+                        <h3>Ремонт ноутбуков</h3>
+                        <ul>
+                            <li>Замена экрана, клавиатуры и других компонентов.</li>
+                            <li>Устранение перегрева и чистка системы охлаждения.</li>
+                            <li>Восстановление работы после залития или механических повреждений.</li>
+                        </ul>
+                    </div>
+                    <button class="button button-catalog">Подробнее</button>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="100" class="catalog__card">
+                    <img src="./img/catalog-photos/install.png" alt="установка программ" class="catalog__card_img">
+                    <div class="catalog__card_text">
+                        <h3>Установка ПО</h3>
+                        <ul>
+                            <li>Установка и настройка операционных систем (Windows, macOS, Linux).</li>
+                            <li>Установка офисных и специализированных программ.</li>
+                            <li>Обновление драйверов и оптимизация работы системы.</li>
+                        </ul>
+                    </div>
+                    <button class="button button-catalog">Подробнее</button>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="200" class="catalog__card">
+                    <img src="./img/catalog-photos/help-user.png" alt="песик за компьютером" class="catalog__card_img">
+                    <div class="catalog__card_text">
+                        <h3>Поддержка пользователя</h3>
+                        <ul>
+                            <li>Удаленная помощь в решении технических проблем.</li>
+                            <li>Обучение работе с программами и устройствами.</li>
+                            <li>Настройка принтеров, сканеров и другого оборудования.</li>
+                        </ul>
+                    </div>
+                    <button class="button button-catalog">Подробнее</button>
+                </div>
+
             </div>
         </section>
 
-        <section class="help">
-            <h2 class="title title-light">чем мы можем <span class="text-extrabold">помочь</span></h2>
-            <h3 class="subtitle">Вот как мы можем <span class="text-extrabold">помочь вам</span> </h3>
+        <section class="stats">
+            <h2 data-aos="zoom-in" class="stats__header">Наша <span class="text-extrabold">статистика</span></h2>
             <div class="container">
-                <div class="help__wrapper">
-                    <div class="help__wrapper_item">
-                        <img class="tool-icon" src="icons/tools.svg" alt="иконка иструментов">
-                        <h4>Поддержка на сайте</h4>
-                        <p>Онлайн-консультации и помощь через чат или форму обратной связи, чтобы быстро решить вашу
-                            проблему.</p>
+                <div data-aos="zoom-in" data-aos-delay="0" class="stats__round">
+                    <div class="stats__round_text">
+                        <h5>10</h5>
+                        <p>лет опыта</p>
                     </div>
-                    <div class="help__wrapper_item">
-                        <img class="headset-icon" src="icons/headset.svg" alt="иконка наушников">
-                        <h4>Удаленная поддержка</h4>
-                        <p>Настройка программного обеспечения и устранение сбоев без визита в сервисный центр.</p>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="100" class="stats__round">
+                    <div class="stats__round_text">
+                        <h5>7039</h5>
+                        <p>клиентов</p>
                     </div>
-                    <div class="help__wrapper_item">
-                        <img class="stopwatch-icon" src="icons/stopwatch.svg" alt="иконка таймера">
-                        <h4>Быстрый сервис</h4>
-                        <p>Оперативное выполнение ремонта и услуг с минимальным временем ожидания.</p>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="200" class="stats__round">
+                    <div class="stats__round_text">
+                        <h5>95%</h5>
+                        <p>успешного ремнота</p>
+                    </div>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="300" class="stats__round">
+                    <div class="stats__round_text">
+                        <h5>24</h5>
+                        <p>часа на диагностику</p>
                     </div>
                 </div>
             </div>
+            <h4 data-aos="zoom-in" data-aos-delay="350" class="stats__subheader">Давайте работать вместе!</h4>
         </section>
 
-        <section class="services">
-            <h2 class="title title">наши <span class="text-extrabold">услуги</span></h2>
-            <h3 class="subtitle subtitle-black">Исследуйте наши <span class="text-extrabold">услуги</span> </h3>
-            <div class="container">
-                <div class="services__wrapper">
-                    <div class="services__card services__card-1">
-                        <div class="services__card_icon">
-                            <img src="icons/smartphone-linear.svg" alt="иконка телефона">
-                        </div>
-                        <h4 class="services__card_title">Ремонт смартфона</h4>
-                        <p class="services__card_descr">Профессиональный ремонт любых моделей смартфонов, включая замену
-                            экранов, аккумуляторов и устранение программных сбоев.</p>
-                        <a href="#" class="services__card_link">Читать больше</a>
-                    </div>
-                    <div class="services__card services__card-2">
-                        <div class="services__card_icon">
-                            <img src="icons/smartphone-linear.svg" alt="иконка телефона">
-                        </div>
-                        <h4 class="services__card_title">Восстановление данных</h4>
-                        <p class="services__card_descr">Быстрое восстановление утраченных данных с жестких дисков,
-                            флешек и других носителей информации.</p>
-                        <a href="#" class="services__card_link">Читать больше</a>
-                    </div>
-                    <div class="services__card">
-                        <div class="services__card_icon">
-                            <img src="icons/smartphone-linear.svg" alt="иконка телефона">
-                        </div>
-                        <h4 class="services__card_title">Ремонт компьютера</h4>
-                        <p class="services__card_descr">Диагностика и устранение любых неисправностей компьютеров,
-                            включая замену комплектующих и настройку программного обеспечения.</p>
-                        <a href="#" class="services__card_link">Читать больше</a>
-                    </div>
-                </div>
-                <div class="services__dots">
-                    <div class="services__dots_dot"></div>
-                    <div class="services__dots_dot services__dots_dot-active"></div>
-                    <div class="services__dots_dot"></div>
-                </div>
-            </div>
-        </section>
 
-        <section class="reviews">
-            <div class="container">
-                <h2 class="title title">Отзывы</h2>
-                <h3 class="subtitle subtitle-black">Что говорят <span class="text-extrabold">клиенты</span> </h3>
-                <div class="reviews__wrapper">
-                    <div class="reviews__card">
-                        <img src="img/review-users/пользователь-1.png" alt="пользователь с отзыва">
-                        <div class="reviews__card_text">
-                            <h5>Анна М., Грязовец</h5>
-                            <p>"Обратилась с разбитым экраном ноутбука, все сделали за день! Очень довольна качеством
-                                работы
-                                и вежливым обслуживанием. Спасибо за скорость и профессионализм!"</p>
-                        </div>
-                    </div>
-                    <div class="reviews__card">
-                        <img src="img/review-users/пользователь-2.png" alt="пользователь с отзыва">
-                        <div class="reviews__card_text">
-                            <h5>Иван К., Вологда</h5>
-                            <p>"Нужно было восстановить данные с жесткого диска, думал, что все потеряно. Ребята не
-                                только вернули всю информацию, но и дали рекомендации, как избежать подобных проблем в
-                                будущем!"</p>
-                        </div>
-                    </div>
-                    <div class="reviews__card">
-                        <img src="img/review-users/пользователь-3.png" alt="пользователь с отзыва">
-                        <div class="reviews__card_text">
-                            <h5>Екатерина Л., Вологда</h5>
-                            <p>"Заказывала удаленную настройку программ на ноутбуке. Все сделали быстро и понятно
-                                объяснили, что и как настроено. Отличный сервис, рекомендую!"</p>
-                        </div>
-                    </div>
-                    <div class="reviews__card">
-                        <img src="img/review-users/пользователь-4.png" alt="пользователь с отзыва">
-                        <div class="reviews__card_text">
-                            <h5>Сергей П., Грязовец</h5>
-                            <p>"Компьютер перестал включаться, думал, что понадобится покупать новый. В сервисе всё
-                                починили за пару часов, да ещё и почистили систему от пыли. Отличная работа!"</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
     </main>
 
@@ -241,7 +288,6 @@
                         </div>
                         <div class="footer__social_item">
                             <img class="icon-phone" src="icons/phone.svg" alt="Иконка телефона">
-                            <!-- FIXME -->
                             <a href="tel:+79815061868">+7 (981) 506-18-68</a>
                         </div>
                         <div class="footer__social_item">
@@ -266,6 +312,12 @@
             </div>
         </div>
     </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- <script src="../node_modules/aos/dist/aos.js"></script> -->
+    <script>
+        AOS.init();
+    </script>
 
 </body>
 

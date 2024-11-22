@@ -1,0 +1,61 @@
+.catalog {
+    position: relative;
+    padding: 6rem 0 6rem 0;
+    background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='40' height='30' patternTransform='scale(7) rotate(35)'><rect x='0' y='0' width='100%' height='100%' fill='%23ffffffff'/><path d='M0 22.5h30v15H0zm15-15h30v15H15m-30-15h30v15h-30zm15-15h30v15H0z' transform='translate(5,0)' stroke-width='0.5' stroke='%23dadadaff' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(-140,-147)' fill='url(%23a)'/></svg>");
+    background-size: cover;
+    background-position: center;
+
+    &-dark {
+        background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='40' height='30' patternTransform='scale(7) rotate(35)'><rect x='0' y='0' width='100%' height='100%' fill='%23121212ff'/><path d='M0 22.5h30v15H0zm15-15h30v15H15m-30-15h30v15h-30zm15-15h30v15H0z' transform='translate(5,0)' stroke-width='0.5' stroke='%23424242ff' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(-140,-392)' fill='url(%23a)'/></svg>");
+    }
+
+    .container {
+        max-width: 125rem;
+        margin: 5.6rem auto 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(40rem, 1fr));
+        gap: 2rem;
+        row-gap: 7rem;
+
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        background: var(--card-color);
+        width: 40rem;
+        min-height: 60rem;
+        box-shadow: 0 4px 4px 0 var(--box-shadow);
+        border-radius: 25px;
+        transition: all .2s;
+        overflow: hidden;
+        justify-self: center;
+
+        &_img {
+            width: 40rem;
+            height: 23rem;
+        }
+
+        &_text {
+            margin-top: 2.7rem;
+            padding: 0 4rem 0rem 4rem;
+
+            h3 {
+                text-align: center;
+                font-size: 2.5rem;
+                font-weight: 800;
+                color: var(--text-color);
+            }
+
+            ul {
+                li {
+                    margin-top: 2.3rem;
+                    font-size: 1.8rem;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}
