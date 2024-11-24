@@ -1,17 +1,19 @@
+@use "base/base.scss";
+
 .help {
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, #ffffff 50%),
-        url('../../../img/backgrounds/how-can-we-help.jpg') no-repeat center top;
+        url('../img/backgrounds/how-can-we-help.jpg') no-repeat center top;
     background-size: cover;
     min-height: 70rem;
     padding-top: 6rem;
 
-    @include respond(big-phone) {
+    @include base.respond(big-phone) {
         min-height: 100vh;
     }
 
     &-dark {
         background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, #121212 50%),
-            url('../../../img/backgrounds/how-can-we-help-dark.jpg') no-repeat center top;
+            url('../img/backgrounds/how-can-we-help-dark.jpg') no-repeat center top;
         background-size: cover;
 
     }
@@ -21,12 +23,12 @@
         margin: 0 auto;
         padding: 7rem 15rem 4rem;
 
-        @include respond(tab-land) {
+        @include base.respond(tab-land) {
             padding-left: 10rem;
             padding-right: 10rem;
         }
 
-        @include respond(tab-port) {
+        @include base.respond(tab-port) {
             padding-left: 2rem;
             padding-right: 2rem;
         }
@@ -36,12 +38,12 @@
         display: flex;
         gap: 3rem;
 
-        @include respond(tab-port) {
+        @include base.respond(tab-port) {
             justify-content: center;
             gap: 1.5rem;
         }
 
-        @include respond(big-phone) {
+        @include base.respond(big-phone) {
             flex-direction: column;
             align-items: center;
         }
@@ -60,11 +62,11 @@
             box-shadow: 0 4px 4px 0 var(--box-shadow);
             transition: all .6s;
 
-            @include respond(tab-port) {
+            @include base.respond(tab-port) {
                 height: 40rem;
             }
 
-            @include respond(big-phone) {
+            @include base.respond(big-phone) {
                 width: 100%;
                 height: 30rem;
                 padding-top: 3rem;

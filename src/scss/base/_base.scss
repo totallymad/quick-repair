@@ -66,6 +66,7 @@
 
 html {
     font-size: 62.5%;
+    scroll-behavior: smooth;
 
     @include respond(tab-land) {
         font-size: 50%;
@@ -85,5 +86,4 @@ body {
     font-weight: 400;
     font-size: 1.6rem;
     color: var(--text-color);
-
 }

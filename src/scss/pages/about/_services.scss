@@ -1,15 +1,17 @@
+@use "base/base.scss";
+
 .services {
     padding-top: 3.4rem;
     min-height: 71rem;
     width: 100%;
     background: var(--background-color);
 
-    @include respond(tab-port) {
+    @include base.respond(tab-port) {
         padding-left: 1rem;
         padding-right: 1rem;
     }
 
-    @include respond(big-phone) {
+    @include base.respond(big-phone) {
         min-height: 70vh;
     }
 
@@ -23,11 +25,11 @@
         gap: 6rem;
         justify-content: center;
 
-        @include respond(tab-land) {
+        @include base.respond(tab-land) {
             gap: 3rem;
         }
 
-        @include respond(tab-port) {
+        @include base.respond(tab-port) {
             gap: 2rem;
 
         }
@@ -36,7 +38,7 @@
 
     &__card {
         background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 40%, var(--card-color) 40%),
-            url('../../../img/catalog-photos/mobile.png') no-repeat;
+            url('../img/catalog-photos/mobile.png') no-repeat;
         background-size: contain;
         display: flex;
         flex-direction: column;
@@ -49,68 +51,68 @@
         padding: 12rem 2rem 2rem;
         transition: all .2s;
 
-        @include respond(tab-port) {
+        @include base.respond(tab-port) {
             width: 40rem;
         }
 
 
         &-1 {
             background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 40%, var(--card-color) 40%),
-                url('../../../img/catalog-photos/network.png') no-repeat;
+                url('../img/catalog-photos/network.png') no-repeat;
             background-size: contain;
 
         }
 
         &-2 {
             background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 40%, var(--card-color) 40%),
-                url('../../../img/catalog-photos/printer.png') no-repeat;
+                url('../img/catalog-photos/printer.png') no-repeat;
             background-size: contain;
         }
 
         &-3 {
             background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 40%, var(--card-color) 40%),
-                url('../../../img/catalog-photos/corporation.png') no-repeat;
+                url('../img/catalog-photos/corporation.png') no-repeat;
             background-size: contain;
         }
 
         &-4 {
             background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 40%, var(--card-color) 40%),
-                url('../../../img/catalog-photos/mobile.png') no-repeat;
+                url('../img/catalog-photos/mobile.png') no-repeat;
             background-size: contain;
 
         }
 
         &-5 {
             background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 40%, var(--card-color) 40%),
-                url('../../../img/catalog-photos/harddisk.png') no-repeat;
+                url('../img/catalog-photos/harddisk.png') no-repeat;
             background-size: contain;
 
         }
 
         &-6 {
             background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 40%, var(--card-color) 40%),
-                url('../../../img/catalog-photos/pc-repair.png') no-repeat;
+                url('../img/catalog-photos/pc-repair.png') no-repeat;
             background-size: contain;
 
         }
 
         &-7 {
             background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 40%, var(--card-color) 40%),
-                url('../../../img/catalog-photos/laptop.png') no-repeat;
+                url('../img/catalog-photos/laptop.png') no-repeat;
             background-size: contain;
 
         }
 
         &-8 {
             background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 40%, var(--card-color) 40%),
-                url('../../../img/catalog-photos/install.png') no-repeat;
+                url('../img/catalog-photos/install.png') no-repeat;
             background-size: contain;
 
         }
 
         &-9 {
             background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 40%, var(--card-color) 40%),
-                url('../../../img/catalog-photos/help-user.png') no-repeat;
+                url('../img/catalog-photos/help-user.png') no-repeat;
             background-size: contain;
 
         }
@@ -184,7 +186,7 @@
     /* IN THE END */
     overflow: hidden;
 
-    @include respond(tab-port) {
+    @include base.respond(tab-port) {
         display: none;
     }
 
@@ -226,7 +228,7 @@
     left: 6%;
     transform: translate(-50%, -50%);
 
-    @include respond(tab-port) {
+    @include base.respond(tab-port) {
         display: none;
     }
 }
@@ -235,7 +237,7 @@
     right: 6%;
     transform: translate(50%, -50%);
 
-    @include respond(tab-port) {
+    @include base.respond(tab-port) {
         display: none;
     }
 }
@@ -286,7 +288,7 @@
     /* IN THE END */
     overflow: hidden;
 
-    @include respond(tab-port) {
+    @include base.respond(tab-port) {
         display: block;
         max-width: 70rem;
     }

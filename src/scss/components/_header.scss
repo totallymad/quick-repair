@@ -1,9 +1,11 @@
+@use "base/base.scss";
+
 .header {
     background-color: var(--main-color);
     min-height: 6rem;
     padding: 12px 0;
 
-    @include respond(tab-land) {
+    @include base.respond(tab-land) {
         padding: 12px 12px;
     }
 
@@ -23,7 +25,7 @@
         display: flex;
         align-items: center;
 
-        @include respond(big-phone) {
+        @include base.respond(big-phone) {
             display: none;
         }
 
@@ -46,7 +48,7 @@
 
             &:last-child {
 
-                @include respond(tab-port) {
+                @include base.respond(tab-port) {
                     display: none;
                 }
             }
@@ -80,7 +82,7 @@
     padding: 1.1rem 0;
     position: relative;
 
-    @include respond(tab-land) {
+    @include base.respond(tab-land) {
         padding: 12px 12px;
     }
 
@@ -119,7 +121,7 @@
             transform: translateY(-8px) rotate(-45deg);
         }
 
-        @include respond(tab-port) {
+        @include base.respond(tab-port) {
             display: flex;
         }
     }
@@ -145,7 +147,7 @@
             padding-left: 30px;
             padding-right: 30px;
 
-            @include respond(phone) {
+            @include base.respond(phone) {
                 padding-left: 15px;
                 padding-right: 15px;
             }
@@ -259,7 +261,7 @@
         font-size: 1.7rem;
         font-weight: 700;
 
-        @include respond(tab-port) {
+        @include base.respond(tab-port) {
             display: none;
         }
 
@@ -311,7 +313,7 @@
         gap: 3rem;
         justify-content: flex-end;
 
-        @include respond(tab-port) {
+        @include base.respond(tab-port) {
             display: none;
         }
 
@@ -328,3 +330,4 @@
         }
     }
 }
+

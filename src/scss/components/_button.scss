@@ -1,3 +1,5 @@
+@use "base/base.scss";
+
 .button {
     width: 21rem;
     height: 4rem;
@@ -9,11 +11,20 @@
     font-size: 1.7rem;
     transition: all .3s;
 
-    @include respond(tab-land) {
+    a {
+        text-decoration: none;
+        color: black;
+
+        &:visited {
+            color: black;
+        }
+    }
+
+    @include base.respond(tab-land) {
         width: 19rem;
     }
 
-    @include respond(tab-port) {
+    @include base.respond(tab-port) {
         width: 16rem;
     }
 
@@ -28,7 +39,7 @@
     }
 
     &-center-tablet {
-        @include respond(tab-port) {
+        @include base.respond(tab-port) {
             display: block;
             margin: 0 auto;
             width: 40rem;
@@ -38,7 +49,7 @@
     }
 
     &-center-phone {
-        @include respond(big-phone) {
+        @include base.respond(big-phone) {
             display: block;
             margin: 0 auto;
             width: 40rem;

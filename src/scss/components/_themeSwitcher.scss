@@ -1,3 +1,5 @@
+@use "base/base.scss";
+
 /* Dark Mode Toggle */
 .theme-switch-wrapper {
     width: 21rem;
@@ -9,11 +11,11 @@
     top: 30px;
     font-size: 30px;
 
-    @include respond(tab-land) {
+    @include base.respond(tab-land) {
         width: 19rem;
     }
 
-    @include respond(tab-port) {
+    @include base.respond(tab-port) {
         width: 16rem;
     }
 }
@@ -48,7 +50,7 @@
     position: relative;
     width: 60px;
 
-    @include respond(tab-port) {
+    @include base.respond(tab-port) {
         height: 20px;
         width: 40px;
     }
@@ -79,7 +81,7 @@
     transition: 0.4s;
     width: 26px;
 
-    @include respond(tab-port) {
+    @include base.respond(tab-port) {
         height: 13px;
         width: 13px;
     }
@@ -92,7 +94,7 @@ input:checked+.slider {
 input:checked+.slider::before {
     transform: translateX(26px);
 
-    @include respond(tab-port) {
+    @include base.respond(tab-port) {
         transform: translateX(18px);
     }
 }

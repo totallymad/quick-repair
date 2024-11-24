@@ -1,20 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="QuickRepair" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="../node_modules/aos/dist/aos.css" /> -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.min.css">
-    <script defer src="js/script.min.js"></script>
+    <script defer src="./js/script.min.js"></script>
     <title>Quick Repair</title>
 </head>
 
 <body>
     <header>
+        <div class="modal hidden">
+            <div class="modal-content">
+                <button class="modal-close">&times;</button>
+                <h2>Вход</h2>
+                <form id="login-form">
+                    <label for="username">Логин:</label>
+                    <input type="text" id="username" placeholder="Введите логин" required>
+                    <label for="password">Пароль:</label>
+                    <input type="password" id="password" placeholder="Введите пароль" required>
+                    <button type="submit">Войти</button>
+                </form>
+                <p>Еще не зарегистрированы?
+                    <a href="#" id="register-link">Зарегистрироваться</a>
+                </p>
+            </div>
+            <div class="modal-overlay"></div>
+        </div>
+
+        <div class="modal modal-register hidden">
+            <div class="modal-content">
+                <button class="modal-close">&times;</button>
+                <h2>Регистрация</h2>
+                <form id="register-form">
+                    <label for="reg-username">Логин:</label>
+                    <input type="text" id="reg-username" placeholder="Введите логин" required>
+                    <label for="reg-password">Введите пароль:</label>
+                    <input type="password" id="reg-password" placeholder="Введите пароль" required>
+                    <label for="reg-password-apply">Подтвердите пароль:</label>
+                    <input type="password" id="reg-password-apply" placeholder="Введите пароль" required>
+                    <button type="submit">Зарегистрироваться</button>
+                </form>
+            </div>
+            <div class="modal-overlay"></div>
+        </div>
+
         <div class="header">
             <div data-aos="fade-down" data-aos-delay="50" class="container">
                 <div class="theme-switch-wrapper">
@@ -42,7 +84,7 @@
                         <a href="mailto:quickrepairgr@gmail.com">quickrepairgr@gmail.com</a>
                     </div>
                 </div>
-                <button class="button">Заказать звонок</button>
+                <button class="button"><a href="contacts.html#request">Оставить заявку</a></button>
             </div>
         </div>
         <div class="subheader">
@@ -63,7 +105,6 @@
                     </ul>
                 </nav>
                 <div class="subheader__login-wrapper">
-                    <button><img class="reg-icon" src="icons/register-light.svg" alt="регистрация"></button>
                     <button><img class="log-icon" src="icons/login-light.svg" alt="вход"></button>
                 </div>
                 <button class="hamburger">
@@ -79,7 +120,6 @@
                     <li><a class="mobile-menu__link" href="./contacts.html">Контакты</a></li>
                 </ul>
                 <div class="mobile-menu__login-wrapper">
-                    <button><img class="reg-icon" src="icons/register-light.svg" alt="регистрация"></button>
                     <button><img class="log-icon" src="icons/login-light.svg" alt="вход"></button>
                 </div>
             </div>
@@ -99,8 +139,8 @@
                     <p data-aos="fade-up" data-aos-delay="50" class="hero__text_descr">Мы - профессионалы в ремонте
                         ноутбуков и компьютерной техники с более
                         чем 10-летним опытом.</p>
-                    <button data-aos="fade-up" data-aos-delay="100"
-                        class="button button-big button-center-phone">Посмотреть услуги</button>
+                    <button data-aos="fade-up" data-aos-delay="100" class="button button-big button-center-phone"><a
+                            href="catalog.html">Посмотреть услуги</a></button>
                 </div>
             </div>
         </section>
@@ -121,8 +161,8 @@
                         сложности
                         поломки, мы всегда готовы помочь вернуть
                         ваше оборудование в отличное состояние!</p>
-                    <button data-aos="fade-right" data-aos-delay="100"
-                        class="button button-big button-center-tablet">Узнать больше</button>
+                    <button data-aos="fade-right" data-aos-delay="100" class="button button-big button-center-tablet"><a
+                            href="catalog.html#catalog">Узнать больше</a></button>
                 </div>
                 <div class="about__images">
                     <img data-aos="zoom-in-left" data-aos-delay="0" class="about__images-1" data-aos-offset="300"
@@ -176,7 +216,7 @@
                                 <h4 class="services__card_title">Сетевая настройка</h4>
                                 <p class="services__card_descr">Профессиональная настройка и оптимизация корпоративных и
                                     домашних сетей для обеспечения стабильного и безопасного подключения.</p>
-                                <a href="#" class="services__card_link">Читать больше</a>
+                                <a href="catalog.html#catalog" class="services__card_link">Читать больше</a>
                             </div>
                             <div class="services__card services__card-2">
                                 <div class="services__card_icon">
@@ -185,7 +225,7 @@
                                 <h4 class="services__card_title">Ремонт периферии</h4>
                                 <p class="services__card_descr">Быстрое и качественное восстановление работы принтеров,
                                     сканеров, мышей, клавиатур и других периферийных устройств.</p>
-                                <a href="#" class="services__card_link">Читать больше</a>
+                                <a href="catalog.html#catalog" class="services__card_link">Читать больше</a>
                             </div>
                             <div class="services__card services__card-3">
                                 <div class="services__card_icon">
@@ -195,7 +235,7 @@
                                 <p class="services__card_descr">Комплексное обслуживание IT-инфраструктуры для бизнеса,
                                     включая
                                     настройку, поддержку и развитие сетей и оборудования.</p>
-                                <a href="#" class="services__card_link">Читать больше</a>
+                                <a href="catalog.html#catalog" class="services__card_link">Читать больше</a>
                             </div>
                         </div>
                     </div>
@@ -210,7 +250,7 @@
                                 <p class="services__card_descr">Профессиональный ремонт любых моделей смартфонов,
                                     включая замену
                                     экранов, аккумуляторов и устранение программных сбоев.</p>
-                                <a href="#" class="services__card_link">Читать больше</a>
+                                <a href="catalog.html#catalog" class="services__card_link">Читать больше</a>
                             </div>
                             <div class="services__card services__card-5">
                                 <div class="services__card_icon">
@@ -220,7 +260,7 @@
                                 <p class="services__card_descr">Быстрое восстановление утраченных данных с жестких
                                     дисков,
                                     флешек и других носителей информации.</p>
-                                <a href="#" class="services__card_link">Читать больше</a>
+                                <a href="catalog.html#catalog" class="services__card_link">Читать больше</a>
                             </div>
                             <div class="services__card services__card-6">
                                 <div class="services__card_icon">
@@ -230,7 +270,7 @@
                                 <p class="services__card_descr">Диагностика и устранение любых неисправностей
                                     компьютеров,
                                     включая замену комплектующих и настройку программного обеспечения.</p>
-                                <a href="#" class="services__card_link">Читать больше</a>
+                                <a href="catalog.html#catalog" class="services__card_link">Читать больше</a>
                             </div>
                         </div>
                     </div>
@@ -245,7 +285,7 @@
                                 <p class="services__card_descr">Эффективный ремонт ноутбуков любой сложности, включая
                                     замену
                                     комплектующих, диагностику и устранение неисправностей.</p>
-                                <a href="#" class="services__card_link">Читать больше</a>
+                                <a href="catalog.html#catalog" class="services__card_link">Читать больше</a>
                             </div>
                             <div class="services__card services__card-8">
                                 <div class="services__card_icon">
@@ -255,7 +295,7 @@
                                 <p class="services__card_descr">Установка, настройка и обновление программного
                                     обеспечения для
                                     оптимальной работы устройств и систем.</p>
-                                <a href="#" class="services__card_link">Читать больше</a>
+                                <a href="catalog.html#catalog" class="services__card_link">Читать больше</a>
                             </div>
                             <div class="services__card services__card-9">
                                 <div class="services__card_icon">
@@ -265,12 +305,12 @@
                                 <p class="services__card_descr">Оперативная техническая поддержка пользователей для
                                     решения
                                     вопросов с оборудованием, программным обеспечением и настройками.</p>
-                                <a href="#" class="services__card_link">Читать больше</a>
+                                <a href="catalog.html#catalog" class="services__card_link">Читать больше</a>
                             </div>
                         </div>
                     </div>
-                    <button  class="slider-services__btn slider-services__btn--left">&larr;</button>
-                    <button  class="slider-services__btn slider-services__btn--right">&rarr;</button>
+                    <button class="slider-services__btn slider-services__btn--left">&larr;</button>
+                    <button class="slider-services__btn slider-services__btn--right">&rarr;</button>
                     <div class="dots"></div>
                 </div>
 
@@ -284,7 +324,7 @@
                                 <h4 class="services__card_title">Сетевая настройка</h4>
                                 <p class="services__card_descr">Профессиональная настройка и оптимизация корпоративных и
                                     домашних сетей для обеспечения стабильного и безопасного подключения.</p>
-                                <a href="#" class="services__card_link">Читать больше</a>
+                                <a href="catalog.html#catalog" class="services__card_link">Читать больше</a>
                             </div>
                         </div>
                     </div>
@@ -298,7 +338,7 @@
                                 <h4 class="services__card_title">Ремонт периферии</h4>
                                 <p class="services__card_descr">Быстрое и качественное восстановление работы принтеров,
                                     сканеров, мышей, клавиатур и других периферийных устройств.</p>
-                                <a href="#" class="services__card_link">Читать больше</a>
+                                <a href="catalog.html#catalog" class="services__card_link">Читать больше</a>
                             </div>
                         </div>
                     </div>
@@ -313,7 +353,7 @@
                                 <p class="services__card_descr">Комплексное обслуживание IT-инфраструктуры для бизнеса,
                                     включая
                                     настройку, поддержку и развитие сетей и оборудования.</p>
-                                <a href="#" class="services__card_link">Читать больше</a>
+                                <a href="catalog.html#catalog" class="services__card_link">Читать больше</a>
                             </div>
                         </div>
                     </div>
@@ -327,7 +367,7 @@
                                 <p class="services__card_descr">Профессиональный ремонт любых моделей смартфонов,
                                     включая замену
                                     экранов, аккумуляторов и устранение программных сбоев.</p>
-                                <a href="#" class="services__card_link">Читать больше</a>
+                                <a href="catalog.html#catalog" class="services__card_link">Читать больше</a>
                             </div>
                         </div>
                     </div>
@@ -341,7 +381,7 @@
                                 <p class="services__card_descr">Быстрое восстановление утраченных данных с жестких
                                     дисков,
                                     флешек и других носителей информации.</p>
-                                <a href="#" class="services__card_link">Читать больше</a>
+                                <a href="catalog.html#catalog" class="services__card_link">Читать больше</a>
                             </div>
                         </div>
                     </div>
@@ -355,7 +395,7 @@
                                 <p class="services__card_descr">Диагностика и устранение любых неисправностей
                                     компьютеров,
                                     включая замену комплектующих и настройку программного обеспечения.</p>
-                                <a href="#" class="services__card_link">Читать больше</a>
+                                <a href="catalog.html#catalog" class="services__card_link">Читать больше</a>
                             </div>
                         </div>
                     </div>
@@ -369,7 +409,7 @@
                                 <p class="services__card_descr">Эффективный ремонт ноутбуков любой сложности, включая
                                     замену
                                     комплектующих, диагностику и устранение неисправностей.</p>
-                                <a href="#" class="services__card_link">Читать больше</a>
+                                <a href="catalog.html#catalog" class="services__card_link">Читать больше</a>
                             </div>
                         </div>
                     </div>
@@ -383,7 +423,7 @@
                                 <p class="services__card_descr">Установка, настройка и обновление программного
                                     обеспечения для
                                     оптимальной работы устройств и систем.</p>
-                                <a href="#" class="services__card_link">Читать больше</a>
+                                <a href="catalog.html#catalog" class="services__card_link">Читать больше</a>
                             </div>
                         </div>
                     </div>
@@ -397,7 +437,7 @@
                                 <p class="services__card_descr">Оперативная техническая поддержка пользователей для
                                     решения
                                     вопросов с оборудованием, программным обеспечением и настройками.</p>
-                                <a href="#" class="services__card_link">Читать больше</a>
+                                <a href="catalog.html#catalog" class="services__card_link">Читать больше</a>
                             </div>
                         </div>
                     </div>
@@ -468,9 +508,9 @@
                 <nav class="footer__nav">
                     <h5>Навигация</h5>
                     <ul class="footer__list">
-                        <li><a class="footer__list_item" href="#">О нас</a></li>
-                        <li><a class="footer__list_item" href="#">Услуги</a></li>
-                        <li><a class="footer__list_item" href="#">Контакты</a></li>
+                        <li><a class="footer__list_item" href="index.html">О нас</a></li>
+                        <li><a class="footer__list_item" href="catalog.html">Услуги</a></li>
+                        <li><a class="footer__list_item" href="contacts.html">Контакты</a></li>
                     </ul>
                 </nav>
                 <div class="footer__contacts">
@@ -495,22 +535,24 @@
                 <div class="footer__news">
                     <h5>Новости</h5>
                     <p>Подпишитесь на наши новости, чтобы не пропустить последние обновления!</p>
-                    <form class="footer__form" action="/submit-email" method="POST">
-                        <label for="email" hidden>Ваш Email:</label>
-                        <input type="email" id="email" name="email" required placeholder="Введите ваш email">
-                        <button class="button" type="submit">Подтвердить</button>
+                    <form class="footer__form">
+                        <label for="email-footer"></label>
+                        <input type="email" id="email-footer" name="email" required placeholder="Введите ваш email">
+                        <p class="footer__form_thx">Спасибо за подписку 😊</p>
+                        <button id="email-footer-btn" class="button" type="submit">Подтвердить</button>
                     </form>
                 </div>
             </div>
             <hr>
             <div class="footer__copyright">
                 Copyright 2024, ВСЕ ПРАВА ЗАЩИЩЕНЫ
+                <a class="arrow-up" href="#"><img src="./icons/arrow-up.svg" alt="стрелка вверх"></a>
+
             </div>
         </div>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- <script src="../node_modules/aos/dist/aos.js"></script> -->
     <script>
         AOS.init();
     </script>

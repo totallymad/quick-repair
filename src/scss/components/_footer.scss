@@ -1,3 +1,5 @@
+@use "base/base.scss";
+
 .footer {
     min-height: 36rem;
     background: var(--main-color);
@@ -18,7 +20,7 @@
         gap: 5rem;
         padding-top: 3rem;
 
-        @include respond(tab-port) {
+        @include base.respond(tab-port) {
             // flex-direction: column;
             // align-items: center;
             flex-wrap: wrap;
@@ -26,7 +28,7 @@
             gap: 7rem;
         }
 
-        @include respond(phone) {
+        @include base.respond(phone) {
             flex-direction: column;
             align-items: center;
             gap: 3rem;
@@ -46,7 +48,7 @@
         padding: 1.5rem 1.2rem;
         // margin-right: 14rem;
 
-        @include respond(big-phone) {
+        @include base.respond(big-phone) {
             display: none;
         }
 
@@ -81,7 +83,7 @@
             font-size: 2rem;
             font-weight: 700;
 
-            @include respond(phone) {
+            @include base.respond(phone) {
                 font-size: 3rem;
             }
 
@@ -94,7 +96,7 @@
                 bottom: -5px;
                 background-color: var(--main-green-color);
 
-                @include respond(phone) {
+                @include base.respond(phone) {
                     width: 100%;
                 }
             }
@@ -108,7 +110,7 @@
         flex-direction: column;
         gap: 1.9rem;
 
-        @include respond(phone) {
+        @include base.respond(phone) {
             margin-top: 2rem;
             align-items: center;
         }
@@ -118,7 +120,7 @@
             text-decoration: none;
             font-size: 1.7rem;
 
-            @include respond(phone) {
+            @include base.respond(phone) {
                 font-size: 2rem;
             }
 
@@ -135,7 +137,7 @@
             font-size: 2rem;
             font-weight: 700;
 
-            @include respond(phone) {
+            @include base.respond(phone) {
                 font-size: 3rem;
             }
 
@@ -148,7 +150,7 @@
                 bottom: -5px;
                 background-color: var(--main-green-color);
 
-                @include respond(phone) {
+                @include base.respond(phone) {
                     width: 100%;
                 }
             }
@@ -162,7 +164,7 @@
         gap: 1.9rem;
         margin-top: 1.7rem;
 
-        @include respond(phone) {
+        @include base.respond(phone) {
             align-items: center;
             margin-top: 2rem;
         }
@@ -172,7 +174,7 @@
             display: flex;
             align-items: start;
 
-            @include respond(phone) {
+            @include base.respond(phone) {
                 font-size: 2rem;
             }
 
@@ -186,7 +188,7 @@
                 text-decoration: none;
                 color: var(--text-color-white);
 
-                @include respond(tab-port) {
+                @include base.respond(tab-port) {
                     margin-left: 5rem;
                 }
 
@@ -197,10 +199,10 @@
     &__news {
         width: 31rem;
 
-        @include respond(phone) {
+        @include base.respond(phone) {
             align-items: center;
             margin-top: 2rem;
-            width: 50rem;
+            width: 90%;
         }
 
         h5 {
@@ -209,7 +211,7 @@
             font-size: 2rem;
             font-weight: 700;
 
-            @include respond(phone) {
+            @include base.respond(phone) {
                 font-size: 3rem;
                 text-align: center;
             }
@@ -223,9 +225,9 @@
                 bottom: -5px;
                 background-color: var(--main-green-color);
 
-                @include respond(phone) {
-                    width: 260px;
-                    left: 34px;
+                @include base.respond(phone) {
+                    width: 100%;
+                    // left: 34px;
                 }
             }
         }
@@ -236,7 +238,7 @@
             margin-top: 1.7rem;
             color: var(--text-color-white);
 
-            @include respond(phone) {
+            @include base.respond(phone) {
                 margin-top: 3rem;
                 font-size: 2rem;
                 text-align: center;
@@ -249,6 +251,13 @@
         display: flex;
         flex-direction: column;
         margin-top: 2.1rem;
+        transition: all 1s;
+
+        p {
+            margin-top: .5rem;
+            margin-bottom: 1.5rem;
+            display: none;
+        }
 
         input {
             font-family: Montserrat, sans-serif;
@@ -262,7 +271,7 @@
             padding-left: 2.5rem;
             margin-bottom: 2.1rem;
 
-            @include respond(phone) {
+            @include base.respond(phone) {
                 height: 40px;
 
                 font-size: 2rem;
@@ -278,7 +287,7 @@
         button {
             width: 100%;
 
-            @include respond(phone) {
+            @include base.respond(phone) {
                 height: 40px;
                 font-size: 2rem;
                 text-align: center;
@@ -289,6 +298,7 @@
     }
 
     &__copyright {
+        position: relative;
         text-align: center;
         text-transform: uppercase;
         font-size: 1.5rem;
@@ -296,6 +306,40 @@
         margin-top: 2.4rem;
         padding-bottom: 2.4rem;
         color: #fff;
+
+        @include base.respond(tab-port) {
+            margin-top: 3rem;
+            padding-bottom: 3rem;
+        }
+
+        @include base.respond(big-phone) {
+            margin-top: 5rem;
+            padding-bottom: 5rem;
+        }
+
+    }
+
+    .arrow-up {
+        background: #fff;
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        position: absolute;
+        bottom: 10px;
+        right: 5px;
+
+        @include base.respond(big-phone) {
+            width: 7rem;
+            height: 7rem;
+            bottom: 20px;
+        }
+
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
     }
 
 }

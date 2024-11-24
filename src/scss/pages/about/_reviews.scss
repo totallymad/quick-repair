@@ -1,14 +1,16 @@
+@use "base/base.scss";
+
 .reviews {
     padding: 3.4rem 1rem;
     min-height: 101rem;
-    background: url('../../../img/backgrounds/reviews.jpg') no-repeat center / cover;
+    background: url('../img/backgrounds/reviews.jpg') no-repeat center / cover;
 
-    @include respond(tab-port) {
+    @include base.respond(tab-port) {
         padding: 3.4rem 1rem;
     }
 
     &-dark {
-        background: url('../../../img/backgrounds/reviews-dark.jpg') no-repeat center / cover;
+        background: url('../img/backgrounds/reviews-dark.jpg') no-repeat center / cover;
     }
 
     &__wrapper {
@@ -31,11 +33,11 @@
         box-shadow: 0 4px 4px 0 var(--box-shadow);
         background-color: var(--card-color);
 
-        @include respond(tab-port) {
+        @include base.respond(tab-port) {
             width: 95%;
         }
 
-        @include respond(big-phone) {
+        @include base.respond(big-phone) {
             width: 100%;
             flex-direction: column;
             align-items: center;
@@ -45,7 +47,7 @@
         }
 
         img {
-            @include respond(tab-port) {
+            @include base.respond(tab-port) {
                 width: 10rem;
             }
         }
@@ -54,7 +56,7 @@
             font-size: 2rem;
             font-weight: 600;
 
-            @include respond(big-phone) {
+            @include base.respond(big-phone) {
                 text-align: center;
             }
         }
@@ -63,7 +65,7 @@
             font-size: 2rem;
             font-weight: 500;
 
-            @include respond(big-phone) {
+            @include base.respond(big-phone) {
                 text-align: center;
             }
         }
@@ -72,7 +74,7 @@
             align-self: flex-end;
             flex-direction: row-reverse;
 
-            @include respond(big-phone) {
+            @include base.respond(big-phone) {
                 flex-direction: column;
 
             }
@@ -80,7 +82,7 @@
             h5 {
                 text-align: right;
 
-                @include respond(big-phone) {
+                @include base.respond(big-phone) {
                     text-align: center;
                 }
             }
@@ -88,7 +90,7 @@
             p {
                 text-align: right;
 
-                @include respond(big-phone) {
+                @include base.respond(big-phone) {
                     text-align: center;
                 }
             }

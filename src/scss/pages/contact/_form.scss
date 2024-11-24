@@ -1,0 +1,194 @@
+@use "base/base.scss";
+
+.request {
+    background: url('../img/backgrounds/contact-form-back.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 6rem 0 6rem 0;
+    min-height: 115rem;
+
+    &-dark {
+        background: url('../img/backgrounds/contact-form-back-dark.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+
+    @include base.respond(phone) {
+        padding: 6rem 1rem 6rem 1rem;
+    }
+
+    &__form {
+        background: var(--card-color);
+        width: 75rem;
+        min-height: 80rem;
+        border-radius: 25px;
+        margin: 10rem auto 0;
+        box-shadow: 0 4px 4px 0 rgba($color: #fff, $alpha: .25);
+        padding: 3.5rem 6rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        @include base.respond(big-phone) {
+            width: 55.5rem;
+            padding: 3.5rem 3.5rem;
+        }
+
+        @include base.respond(phone) {
+            width: 100%;
+        }
+
+        &_group {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+
+            &-checkbox {
+                flex-direction: row;
+                width: 50rem;
+                margin: 0 auto;
+
+                @include base.respond(phone) {
+                    width: 100%;
+                }
+            }
+
+            &-together {
+                flex-direction: row;
+
+                @include base.respond(big-phone) {
+                    flex-direction: column;
+                    align-items: stretch;
+                }
+
+                div {
+                    display: flex;
+                    flex-direction: column;
+                    width: 50%;
+                    gap: 2rem;
+
+                    @include base.respond(big-phone) {
+                        width: 100%;
+                    }
+                }
+            }
+
+            label {
+                font-size: 2rem;
+                font-weight: 400;
+
+            }
+
+            input {
+                padding: 1rem 0 1rem 2.6rem;
+                border-radius: 15px;
+                font-size: 2rem;
+                border: 1px solid black;
+            }
+
+            input[type="checkbox"] {
+                display: none;
+            }
+
+            select {
+                padding: 1rem 2.6rem 1rem 2.6rem;
+                border-radius: 15px;
+                font-size: 2rem;
+                border: 1px solid black;
+
+            }
+
+            textarea {
+                padding: 1rem 2.6rem 1rem 2.6rem;
+                border-radius: 15px;
+                font-size: 2rem;
+                width: 100%;
+                border: 1px solid black;
+                /* Или фиксированное значение, например 300px */
+                max-width: 100%;
+                /* Для предотвращения выхода за пределы контейнера */
+                height: 140px;
+                /* Фиксированная высота */
+                resize: none;
+                /* Запрет изменения размера */
+
+                &::placeholder {
+                    font-size: 2rem;
+                    font-family: Montserrat, sans-serif;
+                    color: rgba($color: #000000, $alpha: .5);
+                    font-weight: 500;
+                }
+            }
+        }
+
+        button {
+            margin: 0 auto;
+        }
+    }
+
+    /* Скрываем стандартный чекбокс */
+    .request__form_group-checkbox input[type="checkbox"] {
+        display: none;
+    }
+
+    /* Стиль кастомного чекбокса */
+    .request__form_group-checkbox label {
+        position: relative;
+        padding-left: 4rem;
+        /* Отступ для кастомного чекбокса */
+        cursor: pointer;
+        font-size: 1.5rem;
+        color: var(--text-color);
+        // line-height: 1.5;
+        user-select: none;
+        /* Запрещаем выделение текста при клике */
+    }
+
+    .request__form_group-checkbox label a {
+        color: #006FFF;
+        text-decoration: none;
+    }
+
+    .request__form_group-checkbox label a:hover {
+        text-decoration: underline;
+    }
+
+    /* Кастомный чекбокс */
+    .request__form_group-checkbox label::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 23px;
+        height: 23px;
+        border-radius: 4px;
+        background: #fff;
+        border: 2px solid var(--main-green-color);
+        transition: background 0.2s, border-color 0.2s;
+    }
+
+    /* Галочка */
+    .request__form_group-checkbox input[type="checkbox"]:checked+label::before {
+        background: var(--main-green-color);
+        border-color: var(--main-green-color);
+    }
+
+    .request__form_group-checkbox input[type="checkbox"]:checked+label::after {
+        content: '';
+        position: absolute;
+        left: 9px;
+        top: 48%;
+        transform: translateY(-50%) rotate(45deg);
+        width: 6px;
+        height: 12px;
+        border: solid #fff;
+        border-width: 0 2px 2px 0;
+    }
+
+    /* Ховер-эффект */
+    .request__form_group-checkbox label:hover::before {
+        border: 2px solid var(--main-green-color);
+
+    }
+}
