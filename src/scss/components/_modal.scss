@@ -20,7 +20,7 @@
     gap: 3rem;
     align-items: center;
     position: relative;
-    background-color: #fff;
+    background-color: var(--card-color);
     padding: 4rem;
     border-radius: 8px;
     max-width: 50rem;
@@ -107,7 +107,7 @@
 }
 
 .modal-catalog-content {
-    background-color: #fff;
+    background-color: var(--card-color);
     width: 80vw;
     /* Ширина модального окна - 80% от экрана */
     height: 80vh;

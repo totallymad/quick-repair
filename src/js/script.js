@@ -4,21 +4,6 @@ const toggleIcon = document.getElementById('toggle-icon');
 const currentTheme = localStorage.getItem('theme') || 'light';
 const subheader = document.querySelector('.subheader');
 
-// секции
-const sections = document.querySelectorAll('section');
-
-// иконки
-const logoIcon = document.querySelectorAll('.icon-logo');
-const geoIcon = document.querySelectorAll('.icon-geo');
-const phoneIcon = document.querySelectorAll('.icon-phone');
-const emailIcon = document.querySelectorAll('.icon-email');
-const registrIcon = document.querySelectorAll('.reg-icon');
-const loginIcon = document.querySelectorAll('.log-icon');
-const toolIcon = document.querySelector('.tool-icon');
-const headsetIcon = document.querySelector('.headset-icon');
-const stopwatchIcon = document.querySelector('.stopwatch-icon');
-const gearIconText = document.querySelector('.title-light');
-
 
 // ---------------------------- Фейк отправка новостей ----------------------------
 
@@ -229,7 +214,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-// ---------------------------- Смена темы ----------------------------
+// ---------------------------- Смена темы ----------------------------.
+
+// секции
+const sections = document.querySelectorAll('section');
+
+// иконки
+const logoIcon = document.querySelectorAll('.icon-logo');
+const geoIcon = document.querySelectorAll('.icon-geo');
+const phoneIcon = document.querySelectorAll('.icon-phone');
+const emailIcon = document.querySelectorAll('.icon-email');
+const registrIcon = document.querySelectorAll('.reg-icon');
+const loginIcon = document.querySelectorAll('.log-icon');
+const toolIcon = document.querySelector('.tool-icon');
+const headsetIcon = document.querySelector('.headset-icon');
+const stopwatchIcon = document.querySelector('.stopwatch-icon');
+const gearIconText = document.querySelector('.title-light');
+const arrowUp = document.getElementById('arrow-up');
+
+console.log(arrowUp)
+
 
 function iconMode(theme) {
     const icons = [
@@ -239,6 +243,7 @@ function iconMode(theme) {
         { elements: emailIcon, baseName: 'email' },
         { elements: registrIcon, baseName: 'register' },
         { elements: loginIcon, baseName: 'login' },
+        { elements: [arrowUp], baseName: 'arrow-up' },
         { elements: [headsetIcon], baseName: 'headset' }, // Одиночная иконка
         { elements: [stopwatchIcon], baseName: 'stopwatch' },
         { elements: [toolIcon], baseName: 'tools' }
