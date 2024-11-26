@@ -1,8 +1,103 @@
-// Получаем элементы
-const toggleSwitch = document.querySelector('input[type="checkbox"');
-const toggleIcon = document.getElementById('toggle-icon');
-const currentTheme = localStorage.getItem('theme') || 'light';
-const subheader = document.querySelector('.subheader');
+
+// ---------------------------- Табы ----------------------------
+
+// Получаем все вкладки и весь контент
+const tabs = document.querySelectorAll('.profile__tab');
+const contents = document.querySelectorAll('.profile__content');
+
+
+if (tabs) {
+    // Функция для переключения вкладок
+    tabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => {
+            // Убираем класс активности у всех вкладок
+            tabs.forEach(t => t.classList.remove('profile__tab-active'));
+            // Добавляем класс активности на текущую вкладку
+            tab.classList.add('profile__tab-active');
+
+            // Скрываем весь контент
+            contents.forEach(c => c.classList.remove('profile__content-active'));
+            // Показываем контент, соответствующий текущей вкладке
+            contents[index].classList.add('profile__content-active');
+        });
+    });
+}
+
+
+// ---------------------------- Инпут в профиле ----------------------------
+
+// Получаем ссылки на кнопки и инпуты
+const editButton = document.getElementById("edit-button");
+const saveButton = document.getElementById("save-button");
+const inputs = document.querySelectorAll(".profile__form_group input");
+const profileInfo = document.querySelector(".profile__main-info_text");
+
+if (editButton && saveButton) {
+    // Функция переключения режима редактирования
+    editButton.addEventListener("click", () => {
+        inputs.forEach(input => input.disabled = false); // Разблокируем инпуты
+        editButton.disabled = true; // Блокируем кнопку "Редактировать"
+        editButton.style.display = 'none';
+        saveButton.style.display = 'block';
+        saveButton.disabled = false; // Активируем кнопку "Сохранить"
+
+    });
+
+    // Функция сохранения данных
+    saveButton.addEventListener("click", () => {
+        // Обновляем данные в текстовом блоке
+        profileInfo.innerHTML = `
+        <p>Имя: ${document.getElementById("first-name").value + ' ' + document.getElementById("last-name").value || "—"}</p>
+        <p>Дата рождения: ${document.getElementById("birthdate").value || "—"}</p>
+        <p>Телефон: ${document.getElementById("phone").value || "—"}</p>
+        <p>Электронная почта: ${document.getElementById("email").value || "—"}</p>
+        <p>Никнейм: ${document.getElementById("nickname").value || "—"}</p>
+    `;
+
+        inputs.forEach(input => input.disabled = true); // Блокируем инпуты
+        saveButton.style.display = 'none';
+        editButton.style.display = 'block';
+        editButton.disabled = false; // Разблокируем кнопку "Редактировать"
+        saveButton.disabled = true; // Блокируем кнопку "Сохранить"
+    });
+
+}
+
+
+
+// ---------------------------- Фото в профиле ----------------------------
+
+const avatar = document.getElementById("avatar");
+const fileInput = document.getElementById("file-input");
+const textInput = document.getElementById("input-text");
+
+if (avatar) {
+    // Клик по блоку вызывает выбор файла
+    avatar.parentElement.addEventListener("click", () => {
+        fileInput.click();
+    });
+
+    // Отображение выбранного изображения
+    fileInput.addEventListener("change", (event) => {
+        const file = event.target.files[0];
+        if (file && file.type.startsWith("image/")) {
+            const reader = new FileReader();
+
+            avatar.style.padding = 0;
+
+            // Загрузка и отображение изображения
+            reader.onload = (e) => {
+                avatar.src = e.target.result;
+            };
+
+            reader.readAsDataURL(file);
+            textInput.textContent = 'Изменить фото';
+        } else {
+            alert("Пожалуйста, выберите изображение.");
+        }
+    });
+
+}
 
 
 // ---------------------------- Фейк отправка новостей ----------------------------
@@ -214,7 +309,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-// ---------------------------- Смена темы ----------------------------.
+// ---------------------------- Смена темы ----------------------------
+
+// Получаем элементы
+const toggleSwitch = document.querySelector('input[type="checkbox"');
+const toggleIcon = document.getElementById('toggle-icon');
+const currentTheme = localStorage.getItem('theme') || 'light';
+const subheader = document.querySelector('.subheader');
 
 // секции
 const sections = document.querySelectorAll('section');

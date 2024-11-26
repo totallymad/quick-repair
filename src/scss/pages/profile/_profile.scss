@@ -1,0 +1,324 @@
+@use "base/base.scss";
+
+.profile {
+    width: 100%;
+    min-height: 90vh;
+    background: url('../img/backgrounds/main-section-light.jpg') center center / cover no-repeat;
+
+    .container {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+        max-width: 120rem;
+        margin: 0 auto;
+
+        @include base.respond(tab-port) {
+            padding-left: 2rem;
+            padding-right: 2rem;
+
+        }
+
+        @include base.respond(big-phone) {
+            padding: 4rem .5rem;
+        }
+    }
+
+    &__content {
+        display: none;
+        min-height: 50rem;
+
+
+
+        &-active {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    }
+
+    &__wrapper {
+        margin: 0 auto;
+        width: 100rem;
+        min-height: 60rem;
+        background: var(--card-color);
+        border-radius: 25px;
+        padding: 5rem;
+
+        @include base.respond(tab-port) {
+            width: 100%;
+        }
+    }
+
+    &__tabs {
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        gap: 14px;
+        height: 60px;
+    }
+
+    &__tab {
+        border-radius: 10px 10px 0 0;
+        width: 17rem;
+        height: 50px;
+        transition: all .3s;
+        background: var(--card-color);
+        font-weight: 700;
+        font-size: 1.7rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        @include base.respond(big-phone) {
+            width: 14.5rem;
+        }
+
+        @include base.respond(phone) {
+            width: 13rem;
+        }
+
+        &-active {
+            height: 60px;
+            background: var(--main-green-color);
+        }
+
+        &:hover {
+            cursor: pointer;
+            height: 60px;
+        }
+    }
+
+    &__main-info {
+        display: flex;
+        gap: 4rem;
+
+        @include base.respond(big-phone) {
+            flex-direction: column;
+        }
+
+        &_photo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            text-align: center;
+
+
+            img {
+                padding: 3rem;
+                object-fit: cover;
+                margin-bottom: 10px;
+                width: 20rem;
+                height: 20rem;
+                border-radius: 100%;
+                background: #d9d9d9;
+            }
+
+            p {
+                font-size: 14px;
+                color: var(--text-color);
+            }
+        }
+
+        &_text {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            justify-content: center;
+            font-size: 2rem;
+
+            p {
+                word-wrap: break-word;
+
+                @include base.respond(tab-port) {
+                    width: 260px;
+                }
+
+                @include base.respond(big-phone) {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    &__form {
+        padding-top: 4rem;
+        width: 90rem;
+        display: flex;
+        gap: 3rem;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+
+        @include base.respond(tab-port) {
+            // flex-direction: column;
+            width: 100%;
+        }
+
+        &_group {
+            display: flex;
+            flex-direction: column;
+            width: 40rem;
+            gap: 10px;
+            font-size: 2rem;
+
+            button {
+                @include base.respond(big-phone) {
+                    width: 100%;
+                }
+            }
+
+            @include base.respond(tab-port) {
+                width: 100%;
+                margin: 0 3rem;
+            }
+
+            @include base.respond(big-phone) {
+                margin: 0rem;
+            }
+
+            label {
+                font-weight: 700;
+            }
+
+            input {
+                border-radius: 10px;
+                height: 4rem;
+                border: 1px solid var(--text-color);
+                padding: 0 10px;
+                font-size: 1.5rem;
+                font-family: Montserrat, sans-serif;
+            }
+
+
+        }
+
+        #save-button {
+            display: none;
+        }
+
+
+    }
+
+    &__logout {
+        margin-top: 30px;
+        display: flex;
+        gap: 30px;
+
+        button {
+            padding: 10px 30px;
+            border-radius: 10px;
+            border: none;
+            background: var(--profile-color);
+            font-weight: 600;
+            font-size: 1.7rem;
+            transition: all .3s;
+
+            &:hover {
+                cursor: pointer;
+                background: var(--main-green-color);
+                color: #fff;
+            }
+        }
+
+        @include base.respond(tab-port) {
+            width: 100%;
+            margin: 30px 3rem 0 3rem;
+        }
+
+        @include base.respond(big-phone) {
+            margin: 3rem auto 0 auto;
+            justify-content: center;
+        }
+    }
+
+    &__orders {
+
+        h6 {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        div {
+            background: var(--profile-color);
+            border-radius: 15px;
+            padding: 19px 18px;
+            font-size: 1.7rem;
+            font-weight: 700;
+            margin-top: 1.3rem;
+            display: flex;
+            justify-content: space-between;
+            transition: all .5s;
+
+            &:hover {
+                cursor: pointer;
+                background: var(--main-green-color);
+            }
+        }
+    }
+
+    &__bonus-card {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        @include base.respond(big-phone) {
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        h6 {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 1.7rem;
+            font-weight: 700;
+        }
+    }
+
+    &__bonus-history {
+        h6 {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        @include base.respond(big-phone) {
+            margin-top: 10px;
+        }
+    }
+
+    &__list {
+        list-style: none;
+
+        &_item {
+            border-radius: 15px;
+            padding: 2rem;
+            background: #76B830;
+            font-size: 1.7rem;
+            font-weight: 700;
+            margin-top: 1.6rem;
+            transition: all .5s;
+
+            &:first-child {
+                margin-top: 3rem;
+            }
+
+            &-minus {
+                background: #DF5353;
+            }
+
+        }
+
+    }
+}

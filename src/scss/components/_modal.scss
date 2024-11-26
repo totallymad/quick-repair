@@ -1,3 +1,5 @@
+@use "base/base.scss";
+
 /* Модальное окно */
 .modal {
     position: fixed;
@@ -117,10 +119,28 @@
     position: relative;
     overflow: auto;
     padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+
+
+    img {
+        margin: 3rem;
+        border-radius: 25px;
+
+        @include base.respond(big-screen) {
+            height: 600px;
+            object-fit: contain;
+        }
+    }
+
+
     h2 {
         letter-spacing: 2px;
         margin-bottom: 2rem;
     }
+
     p {
         margin-bottom: 2rem;
     }
@@ -128,7 +148,7 @@
     ul {
         list-style-type: none;
 
-        li {   
+        li {
             margin-top: 1rem;
 
             ul {
@@ -143,9 +163,14 @@
     }
 
     button {
-        margin-top: 2rem;
+        margin-top: 10rem;
         width: 30rem;
         height: 5rem;
+        padding: 1.5rem;
+
+        @include base.respond(big-phone) {
+            width: 100%;
+        }
     }
 }
 
@@ -155,17 +180,4 @@
     right: 20px;
     font-size: 50px;
     cursor: pointer;
-}
-
-
-/* Дополнительные стили для кнопки */
-.button-catalog {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-}
-
-.button-catalog:hover {
-    background-color: #45a049;
 }
