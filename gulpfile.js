@@ -4,7 +4,7 @@ const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cleanCSS = require('gulp-clean-css');
 const babel = require('gulp-babel');
-const terser = require('gulp-terser'); 
+const terser = require('gulp-terser');
 const rename = require("gulp-rename");
 const browserSync = require('browser-sync').create();
 const htmlmin = require('gulp-htmlmin');
@@ -65,7 +65,7 @@ gulp.task('html', function () {
 
 // Задача: изображения
 gulp.task('images', function () {
-  return gulp.src(paths.images.src, {encoding: false})
+  return gulp.src(paths.images.src, { encoding: false })
     .pipe(imagemin()) // Оптимизация изображений
     .pipe(gulp.dest(paths.images.dest))
     .pipe(browserSync.stream());
@@ -94,8 +94,21 @@ gulp.task('serve', function () {
   gulp.watch(paths.icons.src, gulp.series('icons')); // Отслеживание иконок
 });
 
+// Задача: билд
+gulp.task('build', gulp.series(
+  gulp.parallel('styles', 'scripts', 'html', 'images', 'icons')
+));
+
+
+// // Задача по умолчанию
+// gulp.task('default', gulp.series(
+//   gulp.parallel('styles', 'scripts', 'html', 'images', 'icons'),
+//   'serve'
+// ));
+
+
 // Задача по умолчанию
 gulp.task('default', gulp.series(
-  gulp.parallel('styles', 'scripts', 'html', 'images', 'icons'),
-  'serve'
+  'build', // Сначала собираем проект
+  'serve'  // Затем запускаем сервер и отслеживаем изменения
 ));

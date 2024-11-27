@@ -122,7 +122,42 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    scrollbar-width: thin;
+    /* Тонкий скроллбар */
+    scrollbar-color: rgba(255, 255, 255, 0.6) rgba(0, 0, 0, 0.2);
+    /* Цветы ползунка и трека */
+    overflow-y: auto;
+    /* Включение вертикального скроллинга */
+    scrollbar-gutter: stable;
+    /* Стабильное отображение области для скроллбара */
 
+
+    /* Для WebKit-браузеров */
+    .modal-catalog-content::-webkit-scrollbar {
+        width: 8px;
+        /* Ширина вертикального скроллбара */
+        height: 8px;
+        /* Высота горизонтального скроллбара */
+    }
+
+    .modal-catalog-content::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.2);
+        /* Фон трека */
+        border-radius: 10px;
+        /* Закругление трека */
+    }
+
+    .modal-catalog-content::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.6);
+        /* Цвет ползунка */
+        border-radius: 10px;
+        /* Закругление ползунка */
+    }
+
+    .modal-catalog-content::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.8);
+        /* Цвет ползунка при наведении */
+    }
 
 
     img {
