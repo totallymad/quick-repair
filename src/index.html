@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.min.css">
-    <script defer src="./js/script.min.js"></script>
+    <!-- <script defer src="./js/script.min.js"></script> -->
     <title>Quick Repair</title>
 </head>
 
@@ -65,7 +65,7 @@
                     </span>
                     <label class="theme-switch">
                         <input type="checkbox">
-                        <div class="slider round"></div>
+                        <span class="slider round"></span>
                     </label>
                 </div>
                 <div class="header__social">
@@ -84,7 +84,8 @@
                         <a href="mailto:quickrepairgr@gmail.com">quickrepairgr@gmail.com</a>
                     </div>
                 </div>
-                <button class="button"><a href="contacts.html#request">Оставить заявку</a></button>
+                <a href="contacts.html#request" class="button">Оставить заявку</a>
+
             </div>
         </div>
         <div class="subheader">
@@ -139,8 +140,10 @@
                     <p data-aos="fade-up" data-aos-delay="50" class="hero__text_descr">Мы - профессионалы в ремонте
                         ноутбуков и компьютерной техники с более
                         чем 10-летним опытом.</p>
-                    <button data-aos="fade-up" data-aos-delay="100" class="button button-big button-center-phone"><a
-                            href="catalog.html#catalog">Посмотреть услуги</a></button>
+                    <a data-aos="fade-up" data-aos-delay="100" class="button button-big button-center-phone"
+                        href="catalog.html#catalog">
+                        Посмотреть услуги
+                    </a>
                 </div>
             </div>
         </section>
@@ -161,8 +164,10 @@
                         сложности
                         поломки, мы всегда готовы помочь вернуть
                         ваше оборудование в отличное состояние!</p>
-                    <button data-aos="fade-right" data-aos-delay="100" class="button button-big button-center-tablet"><a
-                            href="catalog.html#catalog">Узнать больше</a></button>
+                    <a data-aos="fade-right" data-aos-delay="100" class="button button-big button-center-tablet"
+                        href="catalog.html#catalog">
+                        Узнать больше
+                    </a>
                 </div>
                 <div class="about__images">
                     <img data-aos="zoom-in-left" data-aos-delay="0" class="about__images-1" data-aos-offset="300"
@@ -546,7 +551,8 @@
             <hr>
             <div class="footer__copyright">
                 Copyright 2024, ВСЕ ПРАВА ЗАЩИЩЕНЫ
-                <a class="arrow-up" href="#"><img id="arrow-up" src="./icons/arrow-up-light.svg" alt="стрелка вверх"></a>
+                <a class="arrow-up" href="#"><img id="arrow-up" src="./icons/arrow-up-light.svg"
+                        alt="стрелка вверх"></a>
 
             </div>
         </div>
@@ -556,6 +562,8 @@
     <script>
         AOS.init();
     </script>
+    <script type="module" src="./js/script.min.js"></script>
+
 
 </body>
 

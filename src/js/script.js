@@ -106,17 +106,19 @@ const formFooter = document.querySelector('.footer__form');
 const inputFooter = document.getElementById('email-footer');
 const thxMessageFooter = document.querySelector('.footer__form_thx');
 
-formFooter.addEventListener('submit', function (e) {
-    e.preventDefault();
-    inputFooter.value = '';
-    thxMessageFooter.style.display = 'block';
-    inputFooter.style.border = '1px green solid';
+if (formFooter) {
+    formFooter.addEventListener('submit', function (e) {
+        e.preventDefault();
+        inputFooter.value = '';
+        thxMessageFooter.style.display = 'block';
+        inputFooter.style.border = '1px green solid';
 
-    setTimeout(() => {
-        thxMessageFooter.style.display = 'none';
-        inputFooter.style.border = '1px solid #fff';
-    }, 5000)
-})
+        setTimeout(() => {
+            thxMessageFooter.style.display = 'none';
+            inputFooter.style.border = '1px solid #fff';
+        }, 5000)
+    })
+}
 
 
 // ---------------------------- Модальное окно услуги ----------------------------
@@ -127,69 +129,74 @@ const buttons = document.querySelectorAll('.button-catalog');
 const disableScroll = () => body.style.overflow = 'hidden';
 const enableScroll = () => body.style.overflow = '';
 
-buttons.forEach(button => {
-    button.addEventListener('click', function () {
-        const modalId = `modal-${button.dataset.id}`; // Получаем ID модального окна
-        const modal = document.getElementById(modalId);
-        if (modal) {
-            modal.style.display = 'flex'; // Показываем модальное окно
-            document.body.style.overflow = 'hidden'; // Блокируем прокрутку страницы
+if (buttons) {
+    buttons.forEach(button => {
+        button.addEventListener('click', function () {
+            const modalId = `modal-${button.dataset.id}`; // Получаем ID модального окна
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.style.display = 'flex'; // Показываем модальное окно
+                document.body.style.overflow = 'hidden'; // Блокируем прокрутку страницы
+            }
+        });
+    });
+
+    // Кнопки для закрытия модальных окон
+    const closeButtons = document.querySelectorAll('.close-btn');
+
+    closeButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const modal = button.closest('.modal-catalog');
+            modal.style.display = 'none'; // Скрываем модальное окно
+            document.body.style.overflow = ''; // Блокируем прокрутку страницы
+        });
+    });
+
+    // Закрытие модального окна при клике вне окна
+    window.addEventListener('click', function (event) {
+        if (event.target.classList.contains('modal-catalog')) {
+            event.target.style.display = 'none';
+            document.body.style.overflow = ''; // Блокируем прокрутку страницы
         }
     });
-});
-
-// Кнопки для закрытия модальных окон
-const closeButtons = document.querySelectorAll('.close-btn');
-
-closeButtons.forEach(button => {
-    button.addEventListener('click', function () {
-        const modal = button.closest('.modal-catalog');
-        modal.style.display = 'none'; // Скрываем модальное окно
-        document.body.style.overflow = ''; // Блокируем прокрутку страницы
-    });
-});
-
-// Закрытие модального окна при клике вне окна
-window.addEventListener('click', function (event) {
-    if (event.target.classList.contains('modal-catalog')) {
-        event.target.style.display = 'none';
-        document.body.style.overflow = ''; // Блокируем прокрутку страницы
-    }
-});
+}
 
 
 // ---------------------------- Модальное окно логина----------------------------
 // ---------------------------- Фейк авторизация ----------------------------
 
-document.addEventListener('DOMContentLoaded', function () {
-    const loginButton = document.querySelector('.subheader__login-wrapper button');
-    const loginButtonMobile = document.querySelector('.mobile-menu__login-wrapper button');
-    const modalLogin = document.querySelector('.modal');
-    const modalRegister = document.querySelector('.modal-register');
-    const modalCloseButtons = document.querySelectorAll('.modal-close');
-    const modalOverlays = document.querySelectorAll('.modal-overlay');
-    const loginForm = document.querySelector('#login-form');
-    const registerForm = document.querySelector('#register-form');
-    const registerLink = document.querySelector('#register-link');
-    const body = document.body;
+const loginButton = document.querySelector('.subheader__login-wrapper button');
+const loginButtonMobile = document.querySelector('.mobile-menu__login-wrapper button');
+const modalLogin = document.querySelector('.modal');
+const modalRegister = document.querySelector('.modal-register');
+const modalCloseButtons = document.querySelectorAll('.modal-close');
+const modalOverlays = document.querySelectorAll('.modal-overlay');
+const loginForm = document.querySelector('#login-form');
+const registerForm = document.querySelector('#register-form');
+const registerLink = document.querySelector('#register-link');
+const body = document.body;
 
-    const disableScroll = () => body.style.overflow = 'hidden';
-    const enableScroll = () => body.style.overflow = '';
 
+if (loginButton) {
     // Открытие модального окна
     loginButton.addEventListener('click', function () {
         modalLogin.classList.remove('hidden');
         modalLogin.classList.add('show');
         disableScroll();
     });
+}
 
+
+if (loginButtonMobile) {
     // Открытие модального окна(мобилка)
     loginButtonMobile.addEventListener('click', function () {
         modalLogin.classList.remove('hidden');
         modalLogin.classList.add('show');
         disableScroll();
     });
+}
 
+if (modalCloseButtons) {
     // Закрытие модальных окон
     modalCloseButtons.forEach(button => {
         button.addEventListener('click', function () {
@@ -198,7 +205,10 @@ document.addEventListener('DOMContentLoaded', function () {
             enableScroll();
         });
     });
+}
 
+
+if (modalOverlays) {
     modalOverlays.forEach(overlay => {
         overlay.addEventListener('click', function () {
             modalLogin.classList.add('hidden');
@@ -206,7 +216,10 @@ document.addEventListener('DOMContentLoaded', function () {
             enableScroll();
         });
     });
+}
 
+
+if (registerLink) {
     // Открытие формы регистрации
     registerLink.addEventListener('click', function (e) {
         e.preventDefault(); // Предотвращаем переход по ссылке
@@ -214,7 +227,9 @@ document.addEventListener('DOMContentLoaded', function () {
         modalRegister.classList.remove('hidden');
         modalRegister.classList.add('show');
     });
+}
 
+if (modalLogin) {
     // Закрытие на клавишу Escape
     document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape') {
@@ -223,7 +238,10 @@ document.addEventListener('DOMContentLoaded', function () {
             enableScroll();
         }
     });
+}
 
+
+if (loginForm) {
     // Обработка формы входа
     loginForm.addEventListener('submit', function (e) {
         e.preventDefault();
@@ -236,7 +254,10 @@ document.addEventListener('DOMContentLoaded', function () {
             alert('Введите логин и пароль!');
         }
     });
+}
 
+
+if (registerForm) {
     // Обработка формы регистрации
     registerForm.addEventListener('submit', function (e) {
         e.preventDefault();
@@ -260,7 +281,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
     });
-});
+}
+
 
 // ---------------------------- Установка минимальной даты ----------------------------
 
@@ -332,9 +354,6 @@ const headsetIcon = document.querySelector('.headset-icon');
 const stopwatchIcon = document.querySelector('.stopwatch-icon');
 const gearIconText = document.querySelector('.title-light');
 const arrowUp = document.getElementById('arrow-up');
-
-console.log(arrowUp)
-
 
 function iconMode(theme) {
     const icons = [
