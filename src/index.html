@@ -21,41 +21,43 @@
 </head>
 
 <body>
-    <header>
-        <div class="modal hidden">
-            <div class="modal-content">
-                <button class="modal-close">&times;</button>
-                <h2>Вход</h2>
-                <form id="login-form">
-                    <label for="username">Логин:</label>
-                    <input type="text" id="username" placeholder="Введите логин" required>
-                    <label for="password">Пароль:</label>
-                    <input type="password" id="password" placeholder="Введите пароль" required>
-                    <button type="submit">Войти</button>
-                </form>
-                <p>Еще не зарегистрированы?
-                    <a href="#" id="register-link">Зарегистрироваться</a>
-                </p>
-            </div>
-            <div class="modal-overlay"></div>
-        </div>
 
-        <div class="modal modal-register hidden">
-            <div class="modal-content">
-                <button class="modal-close">&times;</button>
-                <h2>Регистрация</h2>
-                <form id="register-form">
-                    <label for="reg-username">Логин:</label>
-                    <input type="text" id="reg-username" placeholder="Введите логин" required>
-                    <label for="reg-password">Введите пароль:</label>
-                    <input type="password" id="reg-password" placeholder="Введите пароль" required>
-                    <label for="reg-password-apply">Подтвердите пароль:</label>
-                    <input type="password" id="reg-password-apply" placeholder="Введите пароль" required>
-                    <button type="submit">Зарегистрироваться</button>
-                </form>
-            </div>
-            <div class="modal-overlay"></div>
+    <div class="modal hidden">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h2>Вход</h2>
+            <form id="login-form">
+                <label for="username">Логин:</label>
+                <input type="text" id="username" placeholder="Введите логин" required>
+                <label for="password">Пароль:</label>
+                <input type="password" id="password" placeholder="Введите пароль" required>
+                <button type="submit">Войти</button>
+            </form>
+            <p>Еще не зарегистрированы?
+                <a href="#" id="register-link">Зарегистрироваться</a>
+            </p>
         </div>
+        <div class="modal-overlay"></div>
+    </div>
+
+    <div class="modal modal-register hidden">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h2>Регистрация</h2>
+            <form id="register-form">
+                <label for="reg-username">Логин:</label>
+                <input type="text" id="reg-username" placeholder="Введите логин" required>
+                <label for="reg-password">Введите пароль:</label>
+                <input type="password" id="reg-password" placeholder="Введите пароль" required>
+                <label for="reg-password-apply">Подтвердите пароль:</label>
+                <input type="password" id="reg-password-apply" placeholder="Введите пароль" required>
+                <button type="submit">Зарегистрироваться</button>
+            </form>
+        </div>
+        <div class="modal-overlay"></div>
+    </div>
+    <header>
+
 
         <div class="header">
             <div data-aos="fade-down" data-aos-delay="50" class="container">
