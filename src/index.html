@@ -172,9 +172,9 @@
                     </a>
                 </div>
                 <div class="about__images">
-                    <img data-aos="zoom-in-left" data-aos-delay="0" class="about__images-1" data-aos-offset="300"
+                    <img loading="lazy" data-aos="zoom-in-left" data-aos-delay="0" class="about__images-1" data-aos-offset="300"
                         src="img/about-photos/pc-cpu.png" alt="процессор компьютера">
-                    <img data-aos="zoom-in-left" data-aos-delay="150" class="about__images-2" data-aos-offset="300"
+                    <img loading="lazy" data-aos="zoom-in-left" data-aos-delay="150" class="about__images-2" data-aos-offset="300"
                         src="img/about-photos/pc-motherboard.png" alt="материнская плата компьюетра">
                 </div>
             </div>
@@ -188,18 +188,18 @@
             <div class="container">
                 <div class="help__wrapper">
                     <div data-aos="zoom-in" data-aos-delay="150" class="help__wrapper_item">
-                        <img class="tool-icon" src="icons/tools.svg" alt="иконка иструментов">
+                        <img class="tool-icon" src="icons/tools-light.svg" alt="иконка иструментов">
                         <h4>Поддержка на сайте</h4>
                         <p>Онлайн-консультации и помощь через чат или форму обратной связи, чтобы быстро решить вашу
                             проблему.</p>
                     </div>
                     <div data-aos="zoom-in" data-aos-delay="250" class="help__wrapper_item">
-                        <img class="headset-icon" src="icons/headset.svg" alt="иконка наушников">
+                        <img class="headset-icon" src="icons/headset-light.svg" alt="иконка наушников">
                         <h4>Удаленная поддержка</h4>
                         <p>Настройка программного обеспечения и устранение сбоев без визита в сервисный центр.</p>
                     </div>
                     <div data-aos="zoom-in" data-aos-delay="350" class="help__wrapper_item">
-                        <img class="stopwatch-icon" src="icons/stopwatch.svg" alt="иконка таймера">
+                        <img class="stopwatch-icon" src="icons/stopwatch-light.svg" alt="иконка таймера">
                         <h4>Быстрый сервис</h4>
                         <p>Оперативное выполнение ремонта и услуг с минимальным временем ожидания.</p>
                     </div>
@@ -316,9 +316,10 @@
                             </div>
                         </div>
                     </div>
-                    <button class="slider-services__btn slider-services__btn--left">&larr;</button>
-                    <button class="slider-services__btn slider-services__btn--right">&rarr;</button>
-                    <div class="dots"></div>
+                    <button class="slider-services__btn slider-services__btn--left" aria-label="Листать влево">&larr;</button>
+                    <button class="slider-services__btn slider-services__btn--right" aria-label="Листать вправо">&rarr;</button>
+                    <div class="dots">
+                    </div>
                 </div>
 
                 <div class="slider-mobile">
@@ -463,35 +464,35 @@
                         class="text-extrabold">клиенты</span> </h3>
                 <div class="reviews__wrapper">
                     <div data-aos="zoom-in-up" class="reviews__card">
-                        <img src="img/review-users/пользователь-1.png" alt="пользователь с отзыва">
+                        <img loading="lazy" src="img/review-users/пользователь-1.png" alt="пользователь с отзыва">
                         <div class="reviews__card_text">
-                            <h5>Анна М., Грязовец</h5>
+                            <h4>Анна М., Грязовец</h4>
                             <p>"Обратилась с разбитым экраном ноутбука, все сделали за день! Очень довольна качеством
                                 работы
                                 и вежливым обслуживанием. Спасибо за скорость и профессионализм!"</p>
                         </div>
                     </div>
                     <div data-aos="zoom-in-up" data-aos-delay="100" class="reviews__card">
-                        <img src="img/review-users/пользователь-2.png" alt="пользователь с отзыва">
+                        <img loading="lazy" src="img/review-users/пользователь-2.png" alt="пользователь с отзыва">
                         <div class="reviews__card_text">
-                            <h5>Иван К., Вологда</h5>
+                            <h4>Иван К., Вологда</h4>
                             <p>"Нужно было восстановить данные с жесткого диска, думал, что все потеряно. Ребята не
                                 только вернули всю информацию, но и дали рекомендации, как избежать подобных проблем в
                                 будущем!"</p>
                         </div>
                     </div>
                     <div data-aos="zoom-in-up" data-aos-delay="200" class="reviews__card">
-                        <img src="img/review-users/пользователь-3.png" alt="пользователь с отзыва">
+                        <img loading="lazy" src="img/review-users/пользователь-3.png" alt="пользователь с отзыва">
                         <div class="reviews__card_text">
-                            <h5>Екатерина Л., Вологда</h5>
+                            <h4>Екатерина Л., Вологда</h4>
                             <p>"Заказывала удаленную настройку программ на ноутбуке. Все сделали быстро и понятно
                                 объяснили, что и как настроено. Отличный сервис, рекомендую!"</p>
                         </div>
                     </div>
                     <div data-aos="zoom-in-up" data-aos-delay="300" class="reviews__card">
-                        <img src="img/review-users/пользователь-4.png" alt="пользователь с отзыва">
+                        <img loading="lazy" src="img/review-users/пользователь-4.png" alt="пользователь с отзыва">
                         <div class="reviews__card_text">
-                            <h5>Сергей П., Грязовец</h5>
+                            <h4>Сергей П., Грязовец</h4>
                             <p>"Компьютер перестал включаться, думал, что понадобится покупать новый. В сервисе всё
                                 починили за пару часов, да ещё и почистили систему от пыли. Отличная работа!"</p>
                         </div>
@@ -506,7 +507,7 @@
         <div class="container">
             <div class="footer__wrapper">
                 <div class="footer__logo">
-                    <img class="icon-logo" src="icons/logo.svg" alt="логотип">
+                    <img class="icon-logo" src="icons/logo-light.svg" alt="логотип">
                     <div class="logo_text">
                         <div class="logo_title">Quick</div>
                         <div class="logo_subtitle">Repair</div>
@@ -524,17 +525,17 @@
                     <h5>Контактная информация</h5>
                     <div class="footer__social">
                         <div class="footer__social_item">
-                            <img class="icon-geo" src="icons/geo-location.svg" alt="Иконка геолокации">
+                            <img class="icon-geo" src="icons/geo-location-light.svg" alt="Иконка геолокации">
                             <a
                                 href="https://yandex.ru/maps/20121/gryazovets/house/ulitsa_lenina_53_66/YEkYdAJjTUcAQFtifXR2eH5nbQ==/?ll=40.253422%2C58.879273&z=20.08">Найди
                                 нас на карте</a>
                         </div>
                         <div class="footer__social_item">
-                            <img class="icon-phone" src="icons/phone.svg" alt="Иконка телефона">
+                            <img class="icon-phone" src="icons/phone-light.svg" alt="Иконка телефона">
                             <a href="tel:+79815061868">+7 (981) 506-18-68</a>
                         </div>
                         <div class="footer__social_item">
-                            <img class="icon-email" src="icons/email.svg" alt="Иконка почты">
+                            <img class="icon-email" src="icons/email-light.svg" alt="Иконка почты">
                             <a href="mailto:quickrepairgr@gmail.com">quickrepairgr@gmail.com</a>
                         </div>
                     </div>

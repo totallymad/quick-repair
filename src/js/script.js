@@ -445,7 +445,7 @@ const slider = function () {
     const createDots = function () {
         slides.forEach(function (_, i) {
             dotContainer.insertAdjacentHTML('beforeend', `
-                <button class="dots__dot" data-slide="${i}"></button>
+                <button class="dots__dot" data-slide="${i}" aria-label="Перейти к слайду ${i + 1}"></button>
             `);
         });
     };
@@ -565,7 +565,7 @@ const sliderMobile = function () {
     const createDots = function () {
         slides.forEach(function (_, i) {
             dotContainer.insertAdjacentHTML('beforeend', `
-                <button class="dots-mobile__dot" data-slide="${i}"></button>
+                <button class="dots-mobile__dot" data-slide="${i}" aria-label="Перейти к слайду ${i + 1}"></button>
             `);
         });
     };
