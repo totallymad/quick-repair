@@ -61,11 +61,11 @@
         color: var(--main-green-color);
 
         &::before {
-            background: url('../../icons/gear-blue.svg') no-repeat center;
+            background: url('../icons/gear-blue.svg') no-repeat center;
         }
 
         &::after {
-            background: url('../../icons/gear-blue.svg') no-repeat center;
+            background: url('../icons/gear-blue.svg') no-repeat center;
         }
     }
 }
