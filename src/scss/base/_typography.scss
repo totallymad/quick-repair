@@ -27,7 +27,7 @@
         display: inline-block;
         width: 30px;
         height: 30px;
-        background: url('../../icons/gear-black.svg') no-repeat center;
+        background: url('../icons/gear-black.svg') no-repeat center;
         background-size: contain;
         margin-right: 1rem;
         align-self: center;
@@ -38,7 +38,7 @@
         display: inline-block;
         width: 30px;
         height: 30px;
-        background: url('../../icons/gear-black.svg') no-repeat center;
+        background: url('../icons/gear-black.svg') no-repeat center;
         background-size: contain;
         margin-left: 1rem;
     }
@@ -48,11 +48,11 @@
         color: var(--main-green-color);
 
         &::before {
-            background: url('../../icons/gear-green.svg') no-repeat center;
+            background: url('../icons/gear-green.svg') no-repeat center;
         }
 
         &::after {
-            background: url('../../icons/gear-green.svg') no-repeat center;
+            background: url('../icons/gear-green.svg') no-repeat center;
         }
     }
 
